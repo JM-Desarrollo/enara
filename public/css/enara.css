@@ -1,0 +1,14 @@
+body {
+            background-image:url('../images/bg.gif');
+            margin-bottom:2002px;
+        }
+
+footer    {
+            background-repeat: repeat-x;
+            width: auto;
+            background: #000;
+        }
+
+.panel-height {
+                height: 728px;
+              } 
