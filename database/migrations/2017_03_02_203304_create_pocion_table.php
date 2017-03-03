@@ -15,6 +15,15 @@ class CreatePocionTable extends Migration
     {
         Schema::create('pocion', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('img');
+            $table->string('name');
+            $table->string('desc');
+            $table->integer('vida');
+            $table->integer('mana');
+            $table->integer('exp');
+            $table->integer('oro');
+            $table->integer('stamina');
+            $table->integer('duracion');
             $table->timestamps();
         });
     }

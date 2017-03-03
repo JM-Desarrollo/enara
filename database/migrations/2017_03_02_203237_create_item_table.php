@@ -15,6 +15,21 @@ class CreateItemTable extends Migration
     {
         Schema::create('item', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('tipo');
+            $table->string('name');
+            $table->string('img');
+            $table->integer('precio');
+            $table->integer('levelMin');
+            $table->integer('danno');
+            $table->integer('defensa');
+            $table->integer('probCritico');
+            $table->integer('constitucion');
+            $table->integer('inteligencia');
+            $table->integer('fuerza');
+            $table->integer('agilidad');
+            $table->integer('carisma');
+            $table->integer('bloqueo');
+            $table->integer('dannoCritico');
             $table->timestamps();
         });
     }

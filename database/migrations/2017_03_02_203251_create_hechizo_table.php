@@ -15,6 +15,14 @@ class CreateHechizoTable extends Migration
     {
         Schema::create('hechizo', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('img');
+            $table->string('name');
+            $table->string('desc');
+            $table->integer('danno');
+            $table->integer('costoMana');
+            $table->integer('precio');
+            $table->integer('costoEnergia');
+            $table->integer('claseExclusiva');
             $table->timestamps();
         });
     }

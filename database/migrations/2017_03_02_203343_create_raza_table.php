@@ -15,6 +15,14 @@ class CreateRazaTable extends Migration
     {
         Schema::create('raza', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('img');
+            $table->string('name');
+            $table->string('desc');
+            $table->integer('inteligencia');
+            $table->integer('fuerza');
+            $table->integer('agilidad');
+            $table->integer('carisma');
+            $table->integer('constitucion');
             $table->timestamps();
         });
     }

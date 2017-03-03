@@ -15,6 +15,17 @@ class CreateClaseTable extends Migration
     {
         Schema::create('clase', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->integer('combateArms');
+            $table->integer('combateDist');
+            $table->integer('golpeCritico');
+            $table->integer('domesticar');
+            $table->integer('resMagica');
+            $table->integer('resFisica');
+            $table->integer('supervivencia');
+            $table->integer('evasion');
+            $table->integer('robar');
+            $table->integer('magia');
             $table->timestamps();
         });
     }

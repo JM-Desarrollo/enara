@@ -15,6 +15,10 @@ class CreateItemsVariosTable extends Migration
     {
         Schema::create('itemsVarios', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('img');
+            $table->string('name');
+            $table->string('desc');
+            $table->integer('valor');
             $table->timestamps();
         });
     }
