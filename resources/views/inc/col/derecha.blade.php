@@ -1,12 +1,12 @@
 <div class="panel panel-default">
     <div class="panel-heading"><h3 class="panel-title">Recursos</h3></div>
     <div class="panel-body">
-        <img src="{{url('images/personaje/oro.png')}}" />{{manaPersonaje(Auth::User()->oro)}}<br />
-        Esquirlas: {{Auth::User()->esquirla}} <br />
-        Diamantes: {{Auth::User()->diamond}}<br />
-        Puntos de Honor: {{Auth::User()->ptsHonor}}<br /> 
-        Puntos de Evento: {{Auth::User()->ptsEvent}}<br />
-        Puntos de Torneo: {{Auth::User()->ptsTorneo}}
+        <img src="{{url('images/personaje/oro.png')}}" /> <b>Oro</b> <div class="anchoFull colorGris">{{vidaPersonaje(Auth::User()->oro)}}</div><br />
+        <img src="{{url('images/personaje/diamond.png')}}" /> <b>Diamantes</b> <div class="anchoFull colorGris">{{vidaPersonaje(Auth::User()->diamond)}}</div><br />
+        <img src="{{url('images/personaje/esquirla.png')}}" /> <b>Esquirlas</b> <div class="anchoFull colorGris">{{vidaPersonaje(Auth::User()->esquierla)}}</div><br />
+        <img src="{{url('images/personaje/ptshonor.png')}}" /> <b>Puntos de Honor</b> <div class="anchoFull colorGris">{{vidaPersonaje(Auth::User()->ptsHonor)}}</div><br />
+        <img src="{{url('images/personaje/ptsEvent.png')}}" /> <b>Puntos de Evento</b> <div class="anchoFull colorGris">{{vidaPersonaje(Auth::User()->ptsEvent)}}</div><br />
+        <img src="{{url('images/personaje/ptstorneo.png')}}" /> <b>Puntos de Torneo</b> <div class="anchoFull colorGris">{{vidaPersonaje(Auth::User()->ptsTorneo)}}</div><br />
     </div>
  </div>
 

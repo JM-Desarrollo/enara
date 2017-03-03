@@ -39,3 +39,19 @@ footer    {
         font-weight: bold;
         color: white;   
 }
+
+.colorGris{
+        background-color: lightslategrey;
+        font-weight: bold;
+        color: white;   
+}
+
+.panel-heading {
+    background-image: url('../images/bgPanelb.png') !important;
+    font-weight: bold !important;
+    color: white !important; 
+}
+
+.panel-body {
+    background-image: url('../images/bgPanel.png') !important;
+}
