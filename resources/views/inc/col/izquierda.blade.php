@@ -6,7 +6,7 @@
                             <div class="progress progress-striped active">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">{{Auth::User()->exp}} / 4000</div>
                             </div>
-                            <img src="{{url('images/personaje/life.png')}}" />  <span class="label label-danger"> {{vidaPersonaje(Auth::User()->const)}}</span><br />
+                            <div class="anchoFull colorRed"><img src="{{url('images/personaje/life.png')}}" />{{vidaPersonaje(Auth::User()->const)}}</div><br />
                             <img src="{{url('images/personaje/stamina.png')}}" /><span class="label label-warning">{{staminaPersonaje(Auth::User()->stamina, Auth::User()->const)}}</span><br />
                             <img src="{{url('images/personaje/mana.png')}}" /><span class="label label-info">{{manaPersonaje(Auth::User()->inteligencia)}}</span><br />
                         </div>

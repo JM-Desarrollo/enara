@@ -12,3 +12,11 @@ footer    {
 .panel-height {
                 height: 728px;
               } 
+
+.anchoFull{
+        width: auto;
+}
+
+.colorRed{
+        background-color: red;
+}
