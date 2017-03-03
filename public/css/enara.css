@@ -14,9 +14,11 @@ footer    {
               } 
 
 .anchoFull{
-        width: auto;
+        width: 90%;
 }
 
 .colorRed{
         background-color: red;
+        font-weight: bold;
+        color: white;
 }
