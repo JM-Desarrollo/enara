@@ -14,11 +14,28 @@ footer    {
               } 
 
 .anchoFull{
-        width: 90%;
+        width: 98%;
+        -webkit-border-radius: 10px 10px;  /* Safari  */
+        border-radius: 10px 10px;     /* Firefox */
+        text-align: center;
+        
+       
 }
 
 .colorRed{
         background-color: red;
         font-weight: bold;
         color: white;
+}
+
+.colorYellow{
+        background-color: sandybrown;
+        font-weight: bold;
+        color: white;   
+}
+
+.colorBlue{
+        background-color: darkblue;
+        font-weight: bold;
+        color: white;   
 }

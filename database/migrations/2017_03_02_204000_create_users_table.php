@@ -28,6 +28,11 @@ class CreateUsersTable extends Migration
             $table->integer('stamina')->default(100);
             $table->integer('suerte')->default(0);
             $table->integer('gold')->default(0);
+            $table->integer('diamond')->default(0);
+            $table->integer('ptsHonor')->default(0);
+            $table->integer('esquirla')->default(0);
+            $table->integer('ptsEvent')->default(0);
+            $table->integer('ptsTorneo')->default(0);
             $table->integer('skillsPoints')->default(0);
             $table->integer('idClase')->unsigned()->index()->nullable();
             $table->integer('idRaza')->unsigned()->index()->nullable();

@@ -2,9 +2,11 @@
     <div class="panel-heading"><h3 class="panel-title">Recursos</h3></div>
     <div class="panel-body">
         <img src="{{url('images/personaje/oro.png')}}" />{{manaPersonaje(Auth::User()->oro)}}<br />
-        Esquirlas: xxx<br />
-        Diamantes: xxx<br />
-        Honor: xxx<br /> 
+        Esquirlas: {{Auth::User()->esquirla}} <br />
+        Diamantes: {{Auth::User()->diamond}}<br />
+        Puntos de Honor: {{Auth::User()->ptsHonor}}<br /> 
+        Puntos de Evento: {{Auth::User()->ptsEvent}}<br />
+        Puntos de Torneo: {{Auth::User()->ptsTorneo}}
     </div>
  </div>
 
