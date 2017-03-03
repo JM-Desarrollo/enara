@@ -55,3 +55,12 @@ footer    {
 .panel-body {
     background-image: url('../images/bgPanel.png') !important;
 }
+
+.navbar-default {
+    background-image: url('../images/bgnav.png') !important;
+    font-weight: bold !important;
+    color: white !important; 
+    border-style: none !important;
+    hover
+    a:hover:   color: hotpink;
+}

@@ -14,7 +14,7 @@
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="#">Mi Personaje <span class="sr-only">(current)</span></a></li>
+                                <li><a href="#">Mi Personaje</a></li>
                                 <li><a href="">Ciudad</a></li>
                                 <li><a href="">Misiones</a></li>
                                 <li><a href="">Coliseo</a></li>

@@ -1,6 +1,6 @@
 
                     <div class="panel panel-default"> <!-- MI PERSONAJE -->
-                        <div class="panel-heading"><h3 class="panel-title">Mi Personaje</h3></div>
+                        <div class="panel-heading"><img src="{{url('images/personaje/personaje.png')}}" /> Mi Personaje</h3></div>
                         <div class="panel-body">
                             <img src="{{url('images/personaje/level.png')}}" /> <b>Nivel</b> {{Auth::User()->level}}<br />
                             <div class="progress progress-striped active">
@@ -14,7 +14,7 @@
 
 
                     <div class="panel panel-default"> <!-- CIUDAD -->
-                        <div class="panel-heading"><h3 class="panel-title">Ciudad</h3></div>
+                        <div class="panel-heading"><img src="{{url('images/ciudad/city.png')}}" /> Ciudad</h3></div>
                         <div class="panel-body">
                             Vista General<br />
                             Gobernador<br />
@@ -28,16 +28,15 @@
                     </div>
 
                     <div class="panel panel-default">
-                        <div class="panel-heading"><h3 class="panel-title">Misiones</h3></div>
+                        <div class="panel-heading"><img src="{{url('images/mision/mision.png')}}" /> Misiones Activas</h3></div>
                         <div class="panel-body">
-                            <b>Principales</b><br />
-                                El misterio de Robert<br />
-                                El Hijo Bastardo<br /><br />
-                            <b>Secundarias</b><br />
-                                El recado de Brynn<br />
-                                La pocion de Thart<br />
-                                La enfermedad Incurable<br /><br />
-                            <b>Globales</b><br />
-                                La defensa del Bosque Whyn<br />
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="#">El misterio de Robert</a></li>
+                                <li class="list-group-item"><a href="#">El Hijo Bastardo</a></li>
+                                <li class="list-group-item"><a href="#">El recado de Brynn</a></li>
+                                <li class="list-group-item"><a href="#">La pocion de Thart</a></li>
+                                <li class="list-group-item"><a href="#">La enfermedad Incurable</a></li>
+                                <li class="list-group-item"><a href="#">La defensa del Bosque Whyn</a></li>
+                            </ul>
                         </div>
                     </div>
