@@ -8,7 +8,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#">Bienvenido Juan!</a>
+                            <a class="navbar-brand" href="#">Bienvenido {{Auth::User()->name}} !</a>
                             </div>
 
                             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -27,7 +27,10 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="#">Editar Perfil</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#">Cerrar Session</a></li>
+                                    <li>
+                                        <a href="{{ url('/logout') }}"   onclick="event.preventDefault();  document.getElementById('logout-form').submit();">Cerrar Sesion</a>
+                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
+                                    </li>
                                 </ul>
                                 </li>
                             </ul>

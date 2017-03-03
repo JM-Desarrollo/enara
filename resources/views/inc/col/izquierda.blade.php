@@ -2,13 +2,16 @@
                     <div class="panel panel-default"> <!-- MI PERSONAJE -->
                         <div class="panel-heading"><h3 class="panel-title">Mi Personaje</h3></div>
                         <div class="panel-body">
-                            Nivel: 5<br />
-                            Experiencia: 400/800<br />
-                            Vida: 500<br />
-                            Stamina: 100<br />
-                            Mana: 250<br />
+                            <span class="label label-default">Nivel: {{Auth::User()->level}}</span><br />
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">{{Auth::User()->exp}} / 4000</div>
+                            </div>
+                            <img src="{{url('images/personaje/life.png')}}" />  <span class="label label-danger"> {{vidaPersonaje(Auth::User()->const)}}</span><br />
+                            <img src="{{url('images/personaje/stamina.png')}}" /><span class="label label-warning">{{staminaPersonaje(Auth::User()->stamina, Auth::User()->const)}}</span><br />
+                            <img src="{{url('images/personaje/mana.png')}}" /><span class="label label-info">{{manaPersonaje(Auth::User()->inteligencia)}}</span><br />
                         </div>
                     </div>
+
 
                     <div class="panel panel-default"> <!-- CIUDAD -->
                         <div class="panel-heading"><h3 class="panel-title">Ciudad</h3></div>

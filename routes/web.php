@@ -11,16 +11,16 @@
 |
 */
 
+Route::get('bienvenido', function () {
+    return view('welcome');
+    });
 
 
 Auth::routes();
 
 // Tiene que estar Logeado //
-Route::group(['middleware' => ['auth']], function() {
+Route::group(['middleware' => ['isAuth']], function() {
 
-    Route::get('/', function () {
-    return view('welcome');
-    });
+     Route::get('/', 'UserController@index');
 
-}
-
+});
