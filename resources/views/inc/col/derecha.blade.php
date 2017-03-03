@@ -1,4 +1,15 @@
 <div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title">Recursos</h3></div>
+    <div class="panel-body">
+        Oro: 5<br />
+        Esquirlas: 12<br />
+        Diamantes: 250<br />
+        Honor: 200<br />
+        Bendicion: Ruina<br />  
+    </div>
+ </div>
+
+ <div class="panel panel-default">
     <div class="panel-heading"><h3 class="panel-title">Coliseo</h3></div>
     <div class="panel-body">
         Tickets: 5<br />

@@ -2,6 +2,8 @@
                     <div class="panel panel-default"> <!-- MI PERSONAJE -->
                         <div class="panel-heading"><h3 class="panel-title">Mi Personaje</h3></div>
                         <div class="panel-body">
+                            Nivel: 5<br />
+                            Experiencia: 400/800<br />
                             Vida: 500<br />
                             Stamina: 100<br />
                             Mana: 250<br />

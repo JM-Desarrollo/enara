@@ -15,13 +15,11 @@
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="#">Mi Personaje <span class="sr-only">(current)</span></a></li>
-                                <li><a href="">Oro: 5874</a></li>
-                                <li><a href="">Esquirlas: 10</a></li>
-                                <li><a href="">Diamantes: 500</a></li>
-                                <li><a href="">Honor: 800</a></li>
-                                <li><a href="">Nivel: 5</a></li>
-                                <li><a href="">Experiencia: 800/1200</a></li>
-                                <li><a href="">Bendicion: Ruina</a></li>
+                                <li><a href="">Ciudad</a></li>
+                                <li><a href="">Misiones</a></li>
+                                <li><a href="">Coliseo</a></li>
+                                <li><a href="">Torneo</a></li>
+                                <li><a href="">Evento</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown">
