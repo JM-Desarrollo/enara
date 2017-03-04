@@ -8,7 +8,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#">Bienvenido {{Auth::User()->name}} !</a>
+                            <a class="navbar-brand" href="{{url('/')}}">Bienvenido {{Auth::User()->name}} !</a>
                             </div>
 
                             <!-- Collect the nav links, forms, and other content for toggling -->

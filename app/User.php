@@ -16,7 +16,7 @@ class User extends Authenticatable
      */
 
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'gold', 'diamond',
     ];
 
 
@@ -31,6 +31,11 @@ class User extends Authenticatable
     public function habilidad(){
         return $this->belongsTo(Habilidad::Class);
     }
+
+    public function trabajo(){
+        return $this->belongsTo(Trabajo::Class);
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *

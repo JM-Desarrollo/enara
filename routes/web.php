@@ -11,28 +11,31 @@
 |
 */
 
-Route::get('bienvenido', function () {
-    return view('welcome');
-    });
+Route::get('bienvenido', function () {return view('welcome');}); // Vista para los Invitados
 
+Auth::routes(); // Rutas de Login y Registro
 
-Auth::routes();
+Route::group(['middleware' => ['isAuth']], function() { // isAuth exige que haya un usuario conectado
 
-// Tiene que estar Logeado //
-Route::group(['middleware' => ['isAuth']], function() {
-
-     Route::get('/', 'UserController@index');
-
-     Route::get('trabajo', 'TrabajoController@index');
+    Route::get('/', 'UserController@index');
+    Route::get('trabajo', 'TrabajoController@index');
+    Route::get('tutorialFirst', 'TutorialController@first');
 
      
-
-     // Tiene que tener la cadena de tutoriales disponible
-     Route::group(['middleware' => ['isTutorial']], function() {
+    Route::group(['middleware' => ['isTutorial']], function() { // isTutorial exige que el usuario no haya completado los tutoriales
         Route::get('tutorial', 'TutorialController@index');
-        Route::get('trabajoTutorial', 'TrabajoController@tutorial');
+        Route::get('trabajoTutorial', 'TutorialController@trabajo');
+        Route::get('alquimistaTutorial', 'TutorialController@alquimista');
+        Route::get('entrenamientoTutorial', 'TutorialController@entrenamiento');
+        Route::get('armeriaTutorial', 'TutorialController@armeria');
+        Route::get('herreriaTutorial', 'TutorialController@herreria');
+        Route::get('sastreTutorial', 'TutorialController@sastreria');
      });
 
-     Route::get('tutorialFirst', 'TutorialController@first');
+     
+     Route::group(['middleware' => ['sinTrabajo']], function() { // sinTrabajo pide que el usuario no tenga un trabajo designado
+        Route::post('trabajo', 'TrabajoController@asignar');
+     });
+
 
 });

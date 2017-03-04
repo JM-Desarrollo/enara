@@ -28,8 +28,9 @@
                         <div class="panel-heading text-center"><img src="{{url('images/mision/dest.png')}}" /> Mision Destacada <img src="{{url('images/mision/dest.png')}}" /></div>
                         <div class="panel-body">
                          
-                            @if(Auth::Check() && tutorialesActivos())
-                                {!! tutoriales() !!}
+                            @if(tutorialesActivos())
+                                <p class="text-center">Para tener Misiones Destacadas primero termina la serie de tutoriales</p>
+                                <p class="text-center">{!! tutoriales() !!}</p>
                               @else
                                     NO
                             @endif

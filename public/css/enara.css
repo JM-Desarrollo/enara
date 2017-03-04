@@ -85,3 +85,15 @@ footer    {
     background-image: url('../images/bgPanel.png') !important;
     font-weight: bold !important;
 }
+
+.btn-enara-oscuro {
+    background-image: url('../images/bgPanelb.png') !important;
+    font-weight: bold !important;
+    color: white !important;
+}
+
+.modalRec {
+    font-weight: bold;
+    color: white; 
+    text-align: left;
+}

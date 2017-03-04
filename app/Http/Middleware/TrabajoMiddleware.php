@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class ConectadoMiddleware
+class TrabajoMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,9 +16,9 @@ class ConectadoMiddleware
      */
     public function handle($request, Closure $next)
     {
-        
-        if(Auth::guest()){
-            return redirect('bienvenido');
+
+        if(Auth::User()->idJob){
+           return redirect('trabajo');
         }
         return $next($request);
     }

@@ -18,7 +18,7 @@ class UserTableSeeder extends Seeder
         
         $clases = Clase::all();
         $razas = Raza::all();
-        $usuarios = factory(App\User::class, 20)->create();
+        $usuarios = factory(App\User::class, 5)->create();
 
         foreach ($usuarios as $usuario) {
            $usuario->idClase =  $clases->random()->id;

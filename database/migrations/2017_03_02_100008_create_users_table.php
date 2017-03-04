@@ -36,8 +36,10 @@ class CreateUsersTable extends Migration
             $table->integer('skillsPoints')->default(0);
             $table->integer('idClase')->unsigned()->index()->nullable();
             $table->integer('idRaza')->unsigned()->index()->nullable();
+            $table->integer('idJob')->unsigned()->index()->nullable();
             
             $table->foreign('idClase')->references('id')->on('clase')->onDelete('set null');
+            $table->foreign('idJob')->references('id')->on('trabajo')->onDelete('set null');
             $table->foreign('idRaza')->references('id')->on('raza')->onDelete('set null');       
             $table->rememberToken();
             $table->timestamps();
