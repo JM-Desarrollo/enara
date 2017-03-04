@@ -10,7 +10,7 @@ footer    {
         }
 
 .panel-height {
-                height: 728px;
+                height: auto;
               } 
 
 .anchoFull{
@@ -61,6 +61,6 @@ footer    {
     font-weight: bold !important;
     color: white !important; 
     border-style: none !important;
-    hover
-    a:hover:   color: hotpink;
 }
+
+

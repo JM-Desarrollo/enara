@@ -14,12 +14,12 @@
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li><a href="#">Mi Personaje</a></li>
-                                <li><a href="">Ciudad</a></li>
-                                <li><a href="">Misiones</a></li>
-                                <li><a href="">Coliseo</a></li>
-                                <li><a href="">Torneo</a></li>
-                                <li><a href="">Evento</a></li>
+                                <li><a href="#"><img src="{{url('images/nav/personaje.png')}}" />Mi Personaje</a></li>
+                                <li><a href=""><img src="{{url('images/nav/city.png')}}" />Ciudad</a></li>
+                                <li><a href=""><img src="{{url('images/nav/scroll.png')}}" />Misiones</a></li>
+                                <li><a href=""><img src="{{url('images/nav/coliseo.png')}}" />Coliseo</a></li>
+                                <li><a href=""><img src="{{url('images/nav/torneo.png')}}" />Torneo</a></li>
+                                <li><a href=""><img src="{{url('images/nav/evento.png')}}" />Evento</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown">
@@ -35,5 +35,7 @@
                                 </li>
                             </ul>
                             </div><!-- /.navbar-collapse -->
-                        </div><!-- /.container-fluid -->
+                        </div><!-- 666869 /.container-fluid -->
 </nav>
+
+

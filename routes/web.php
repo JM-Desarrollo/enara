@@ -23,4 +23,8 @@ Route::group(['middleware' => ['isAuth']], function() {
 
      Route::get('/', 'UserController@index');
 
+     Route::get('tutorial', 'TutorialController@index');
+
+     Route::get('tutorialFirst', 'TutorialController@first');
+
 });

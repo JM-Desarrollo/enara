@@ -8,8 +8,8 @@ class UserController extends Controller
 {
     public function index(){
 
-        //$personaje = 
-        
-        return view('index');
+            return view('home');
+    
     }
+    
 }

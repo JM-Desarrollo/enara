@@ -22,6 +22,20 @@
              <div class="row"> 
                 <div class="col-md-2">@include('inc.col.izquierda')</div> <!-- Columna Izquierda -->
                 <div class="col-md-8"> <!-- Columna Central -->
+                    <!-- MISION DESTACADA -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading text-center"><img src="{{url('images/mision/dest.png')}}" /> Mision Destacada <img src="{{url('images/mision/dest.png')}}" /></div>
+                        <div class="panel-body">
+                         
+                            @if(tutorialesActivos())
+                                {!! tutoriales() !!}
+                              @else
+                                    NO
+                            @endif
+                        </div>
+                    </div>
+                    <!-- FIN MISION DESTACADA -->
+            
                         <div class="panel panel-default">
                             <div class="panel-body panel-height">
                                 @yield('contenido')
