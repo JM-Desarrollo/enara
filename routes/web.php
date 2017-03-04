@@ -23,7 +23,15 @@ Route::group(['middleware' => ['isAuth']], function() {
 
      Route::get('/', 'UserController@index');
 
-     Route::get('tutorial', 'TutorialController@index');
+     Route::get('trabajo', 'TrabajoController@index');
+
+     
+
+     // Tiene que tener la cadena de tutoriales disponible
+     Route::group(['middleware' => ['isTutorial']], function() {
+        Route::get('tutorial', 'TutorialController@index');
+        Route::get('trabajoTutorial', 'TrabajoController@tutorial');
+     });
 
      Route::get('tutorialFirst', 'TutorialController@first');
 

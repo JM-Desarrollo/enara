@@ -22,8 +22,7 @@ class TutorialMigration extends Migration
             $table->boolean('herrero')->default(0);
             $table->boolean('alquimista')->default(0);
             $table->boolean('sastre')->default(0);
-            $table->boolean('destacado')->default(1);
-            $table->boolean('estado')->default(0);
+            $table->boolean('estado')->default(1);
             $table->timestamps();
             $table->foreign('idUser')->references('id')->on('users')->onDelete('set null');
         });

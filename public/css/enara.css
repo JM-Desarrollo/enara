@@ -5,8 +5,11 @@ body {
 
 footer    {
             background-repeat: repeat-x;
-            width: auto;
+            width: 100%;
             background: #000;
+            background-image: url('../images/bgfoot.png');
+            font-weight: bold;
+            text-align: center;
         }
 
 .panel-height {
@@ -64,3 +67,21 @@ footer    {
 }
 
 
+.modal-header {
+    background-image: url('../images/bgPanelb.png') !important;
+    font-weight: bold !important;
+    color: white !important; 
+}
+
+.modal-body {
+    background-image: url('../images/bgPanel.png') !important;
+}
+
+.modal-footer {
+    background-image: url('../images/bgPanelb.png') !important;
+}
+
+.btn-enara {
+    background-image: url('../images/bgPanel.png') !important;
+    font-weight: bold !important;
+}
