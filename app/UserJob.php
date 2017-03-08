@@ -11,4 +11,9 @@ class UserJob extends Model
     protected $fillable = [
         'idUser', 'idTrabajo', 'duracion', 'inicio', 'fin',
     ];
+
+    protected $dates = [
+        'fin',
+
+    ];
 }

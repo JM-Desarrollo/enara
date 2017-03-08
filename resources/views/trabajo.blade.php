@@ -1,7 +1,7 @@
 @extends('master')  @section('titulo', 'Home')   @section('contenido')
 
-<h1 class="text-center">Trabajos
-                <img src="{{url('images/job/principal.jpg')}}" /></h1>
+    <h1 class="text-center">Trabajos
+                    <img src="{{url('images/job/principal.jpg')}}" /></h1>
                     <p>
                         Bienvenido a la tienda de empleadores, en este sitio es donde los empleadores publican los puestos libres que tienen en sus tiendas.
                         La mayoria son trabajos de mala paga, pero te ayudaran a salir del paso.
@@ -54,7 +54,15 @@
                         }
                     </script>
     @else
-        <div class="alert alert-warning">{{Auth::User()->name}} ya cuentas con un trabajo el cual termina en </div>
+        <div class="alert alert-warning text-center">
+        @if($fechaFin>$fechaActual)
+            Hola <b>{{Auth::User()->name}}! </b>Recuerda que ya tienes un trabajo como "{{$trabajo->name}}" el cual finaliza en: {{$finJob->diffInHours($userJob->fin)}} Horas {{($finJob->diffInMinutes($userJob->fin)%60)}} Minutos {{($finJob->diffInSeconds($userJob->fin)%60)}} Segundos
+            @else
+            Terminaste tu trabajo! <a href="#">Recoge tu recompensa</a>
+         
+        @endif
+        
+        </div>
     @endif
                 
 

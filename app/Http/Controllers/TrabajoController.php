@@ -17,17 +17,29 @@ class TrabajoController extends Controller
         $trabajos = Trabajos::all();
         return view('trabajo' , ['trabajos' => $trabajos]);
         }
+        Carbon::setLocale(config('app.locale'));
+        $userJob = userJob::where('idUser', '=', Auth::User()->id)->first(); // Traigo la fila de UserJob correspondiente al Usuario conectado
+        $trabajo = trabajos::findOrFail($userJob->idTrabajo);    // Traigo el trabajo
+        //$fin = Carbon::createFromFormat('Y-m-d H:i:s', $userJob->fin)->toDateTimeString(); 
+        //dd($userJob->fin);
 
-        $userJob = UserJob::findOrFail(Auth::User()->id); // Traigo la fila de UserJob
-        $trabajo = Trabajo::findOeFail($userJob->idJob); // Traigo el trabajo que esta realizando
+        $fin =  Carbon::now();
+        $fechaFin = $userJob->fin;
+
+        return view('trabajo', [
+                                'trabajo' => $trabajo,
+                                'userJob' => $userJob,
+                                'fechaActual' => Carbon::now(),
+                                'finJob' => $fin,
+                                'fechaFin' => $fechaFin
+        ]);
     }
 
     public function asignar(Request $request){
         $datos = UserJob::where('idUser', '=' , Auth::User()->id)->first();
         $datos->idTrabajo = $request->idJob;                     
         $datos->duracion = $request->horas;
-        $datos->inicio = Carbon::now()->toTimeString();
-        $datos->fin = Carbon::now()->addHours($request->horas)->toTimeString();
+        $datos->fin = Carbon::now()->addHours($request->horas)->toDateTimeString();
         $datos->save(); 
 
         $user = User::findOrFail(Auth::User()->id);

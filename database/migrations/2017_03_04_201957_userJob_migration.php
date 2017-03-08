@@ -17,8 +17,7 @@ class UserJobMigration extends Migration
             $table->increments('id');
             $table->integer('idUser')->unsigned()->index()->nullable();
             $table->integer('idTrabajo')->unsigned()->index()->nullable();
-            $table->time('inicio')->nullable();
-            $table->time('fin')->nullable();
+            $table->datetime('fin')->nullable();
             $table->integer('duracion')->nullable();
             $table->timestamps();
             // CLAVES FORANEAS
