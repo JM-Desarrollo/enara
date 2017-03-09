@@ -59,5 +59,6 @@ class Kernel extends HttpKernel
         'isAuth' => \App\Http\Middleware\ConectadoMiddleware::class,
         'isTutorial' => \App\Http\Middleware\TutorialesMiddleware::class,
         'sinTrabajo' => \App\Http\Middleware\TrabajoMiddleware::class,
+        'conTrabajo' => \App\Http\Middleware\RecompensaTrabajoMiddleware::class,
     ];
 }

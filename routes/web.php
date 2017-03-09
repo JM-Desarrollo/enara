@@ -37,5 +37,11 @@ Route::group(['middleware' => ['isAuth']], function() { // isAuth exige que haya
         Route::post('trabajo', 'TrabajoController@asignar');
      });
 
+     Route::group(['middleware' => ['conTrabajo']], function() { // conTrabajo pide que el usuario tenga un trabajo designado
+        Route::get('recompensaJob', 'TrabajoController@recompensa');
+     });
+
+
+
 
 });

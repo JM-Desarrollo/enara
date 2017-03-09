@@ -7,7 +7,7 @@
                         La mayoria son trabajos de mala paga, pero te ayudaran a salir del paso.
                     </p>
 
-    @if(!Auth::User()->idJob)
+    @if(Auth::User()->idJob == null)
        <table class="table table-hover text-center">
                     <tr>
                     <td><strong>Trabajo</strong></td>
@@ -58,7 +58,7 @@
         @if($fechaFin>$fechaActual)
             Hola <b>{{Auth::User()->name}}! </b>Recuerda que ya tienes un trabajo como "{{$trabajo->name}}" el cual finaliza en: {{$finJob->diffInHours($userJob->fin)}} Horas {{($finJob->diffInMinutes($userJob->fin)%60)}} Minutos {{($finJob->diffInSeconds($userJob->fin)%60)}} Segundos
             @else
-            Terminaste tu trabajo! <a href="#">Recoge tu recompensa</a>
+            Terminaste tu trabajo! <a href="recompensaJob">Recoge tu recompensa</a>
          
         @endif
         

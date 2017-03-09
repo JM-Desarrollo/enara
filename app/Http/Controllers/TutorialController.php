@@ -39,6 +39,11 @@ class TutorialController extends Controller
         $user->diamond +=$diamond;
         $user->save();
 
+        $tutoriales = Tutorial::where('idUser', '=', Auth::User()->id)->first();
+        $tutoriales->trabajo = 1;
+        $tutoriales->save();
+        
+
         return redirect('trabajo')
                                 ->with('titulo', $titulo)
                                 ->with('mensaje', $cuerpo)

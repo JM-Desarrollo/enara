@@ -85,10 +85,25 @@ function tutorialesActivos()
 }
 
 function modal($t, $m, $o, $d){
+
+    if ($o > 0) {
+        $o= "<img src='". url('/images/personaje/oro.png') ."'/>" . $o;
+    } else {
+        $o = " ";
+    }
+
+    if ($d > 0) {
+        $d= "<img src='". url('/images/personaje/diamond.png') ."'/>" . $d;
+    } else {
+        $d = " ";
+    }
+    
+
     $modal = "<div class='container'><div class='modal fade' id='myModal' role='dialog'><div class='modal-dialog'>
             <div class='modal-content'><div class='modal-header'><h4 class='modal-title text-center'>" . $t . "</h4></div><div class='modal-body'><p>"
-            . $m . "</p></div><div class='modal-footer'><p class='modalRec'>Recompensa: <img src='". url('/images/personaje/oro.png') ."'/>" . $o . " <img src='". url('/images/personaje/diamond.png') ."'/>" . $d ."</p> <button type='button' class='btn btn-default btn-enara' data-dismiss='modal'>Cerrar</button>
+            . $m . "</p></div><div class='modal-footer'><p class='modalRec'>Recompensa: " . $o . " " . $d ."</p> <button type='button' class='btn btn-default btn-enara' data-dismiss='modal'>Cerrar</button>
             </div></div></div></div></div>";
+
     
     
 

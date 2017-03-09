@@ -13,7 +13,7 @@ class TrabajoController extends Controller
 {
     public function index(){
 
-        if(!Auth::User()->idJob){ 
+        if(Auth::User()->idJob == null){ 
         $trabajos = Trabajos::all();
         return view('trabajo' , ['trabajos' => $trabajos]);
         }
@@ -47,6 +47,31 @@ class TrabajoController extends Controller
         $user->save();
 
         return redirect('trabajo');
+    }
+
+    public function recompensa(Request $request){
+        $userJob = userJob::where('idUser', '=', Auth::User()->id)->first(); // Traigo la fila de UserJob correspondiente al Usuario conectado
+        $trabajo = trabajos::findOrFail($userJob->idTrabajo);    // Traigo el trabajo
+        $recompensa = $trabajo->paga * $userJob->duracion;
+
+        $userJob->idTrabajo = null;
+        $userJob->fin = null;
+        $userJob->duracion = null;
+        $userJob->save();
+
+        $user = User::where('id', '=', Auth::User()->id)->first();
+        $user->idJob = null;
+        $user->gold += $recompensa;
+        $user->save();
+
+        $titulo = "Recompensa de Trabajo";
+        $mensaje = "Haz trabajado de una forma honorable y dura <b>" . Auth::User()->name . "</b> ! Te haz ganado esta recompensa";
+
+        return redirect('trabajo')
+                                ->with('titulo', $titulo)
+                                ->with('mensaje', $mensaje)
+                                ->with('diamond', 0)
+                                ->with('oro', $recompensa);
     }
 
     
