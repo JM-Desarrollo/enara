@@ -29,7 +29,7 @@ class TutorialController extends Controller
     }
 
     public function trabajo(){
-        $titulo = "Tutorial de Trabajo";
+        $titulo = "Tutorial de Trabajo (FALTA QUE SI TRABAJA NO PUEDA HACER OTRA COSA)";
         $cuerpo = "Para trabajar debes primero elegir el tipo de trabajo, segun lo que sea cuesta mas tiempo finalizarlo pero te dara mayores recomenpsas.";
         $oro = 500;
         $diamond = 5;

@@ -19,6 +19,7 @@ Route::group(['middleware' => ['isAuth']], function() { // isAuth exige que haya
 
     Route::get('/', 'UserController@index');
     Route::get('trabajo', 'TrabajoController@index');
+    Route::get('entrenamiento', 'EntrenamientoController@index');
     Route::get('tutorialFirst', 'TutorialController@first');
 
      

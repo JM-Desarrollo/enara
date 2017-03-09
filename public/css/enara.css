@@ -59,6 +59,14 @@ footer    {
     background-image: url('../images/bgPanel.png') !important;
 }
 
+.panelEntrenamiento {
+    background-image: url('../images/bgEntrenamientoBody.png') !important;
+}
+
+.panelEntrenamientoLevel {
+    background-image: url('../images/bgEntrenamientoSubir.png') !important;
+}
+
 .navbar-default {
     background-image: url('../images/bgnav.png') !important;
     font-weight: bold !important;

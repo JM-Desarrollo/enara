@@ -18,7 +18,7 @@
                         <div class="panel-body">
                             Vista General<br />
                             <a href="trabajo">Trabajo</a><br />
-                            Entrenamiento<br />
+                            <a href="entrenamiento">Entrenamiento</a><br />
                             Armero<br />
                             Herrero<br />
                             Alquimista<br />
@@ -26,16 +26,4 @@
                         </div>
                     </div>
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><img src="{{url('images/mision/mision.png')}}" /> Misiones Activas</h3></div>
-                        <div class="panel-body">
-                            <ul class="list-group">
-                                <li class="list-group-item"><a href="#">El misterio de Robert</a></li>
-                                <li class="list-group-item"><a href="#">El Hijo Bastardo</a></li>
-                                <li class="list-group-item"><a href="#">El recado de Brynn</a></li>
-                                <li class="list-group-item"><a href="#">La pocion de Thart</a></li>
-                                <li class="list-group-item"><a href="#">La enfermedad Incurable</a></li>
-                                <li class="list-group-item"><a href="#">La defensa del Bosque Whyn</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                 
