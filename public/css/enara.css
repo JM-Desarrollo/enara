@@ -105,3 +105,24 @@ footer    {
     color: white; 
     text-align: left;
 }
+
+.fondoDado {
+    background-image: url('../images/registro/dado.png') !important;
+    font-weight: bold !important;
+    color: white !important; 
+    width: 67px;  
+    height: 70px; 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 2em;
+}
+
+.divDado {
+    text-align: center;;
+    margin-left: 34px;
+}
+
+.margenDado {
+    margin-top: -14px;
+}

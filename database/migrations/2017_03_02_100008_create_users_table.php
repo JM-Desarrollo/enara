@@ -20,13 +20,6 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('level')->default(1);
             $table->integer('exp')->default(0);
-            $table->integer('const')->default(1);
-            $table->integer('inteligencia')->default(1);
-            $table->integer('fuerza')->default(1);
-            $table->integer('agilidad')->default(1);
-            $table->integer('carisma')->default(1);
-            $table->integer('stamina')->default(10);
-            $table->integer('suerte')->default(1);
             $table->integer('gold')->default(0);
             $table->integer('diamond')->default(0);
             $table->integer('ptsHonor')->default(0);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\UserJob;
 use App\Tutorial;
+use App\Stats;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,12 @@ class TutorialController extends Controller
 
         $userJob = new UserJob();  
         $userJob->idUser = Auth::user()->id;
-        $userJob->save();      
+        $userJob->save();   
+
+        $stats = new Stat();
+        
+
+
         return redirect('tutorial');
     
     }

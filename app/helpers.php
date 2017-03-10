@@ -1,9 +1,16 @@
 <?php
 use App\Tutorial;
+use App\Raza;
+use App\Clase;
 
-function currentUser()
+function traerRazas()
 {
-    return auth()->user();
+    return Raza::All();
+}
+
+function traerClases()
+{
+    return Clase::All();
 }
 
 // Modificadores para aumentar el nivel de los stats //
