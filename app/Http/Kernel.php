@@ -60,5 +60,6 @@ class Kernel extends HttpKernel
         'isTutorial' => \App\Http\Middleware\TutorialesMiddleware::class,
         'sinTrabajo' => \App\Http\Middleware\TrabajoMiddleware::class,
         'conTrabajo' => \App\Http\Middleware\RecompensaTrabajoMiddleware::class,
+        'controlOro' => \App\Http\Middleware\ControlOroMiddleware::class,
     ];
 }

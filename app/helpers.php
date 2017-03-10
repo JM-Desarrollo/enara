@@ -6,6 +6,38 @@ function currentUser()
     return auth()->user();
 }
 
+// Modificadores para aumentar el nivel de los stats //
+function entrenarOroInt()
+{
+    return (Auth::User()->inteligencia * 275);
+}
+
+function entrenarOroFue()
+{
+    return (Auth::User()->fuerza * 325);
+}
+
+function entrenarOroCar()
+{
+    return (Auth::User()->carisma * 515);
+}
+
+function entrenarOroAgi()
+{
+    return (Auth::User()->agilidad * 418);
+}
+
+function entrenarOroCon()
+{
+    return (Auth::User()->const * 215);
+}
+
+function entrenarOroSta()
+{
+    return (Auth::User()->stamina * 2700);
+}
+
+///////////////////////////////////////////////////////
 function vidaPersonaje($constitucion)
 {
     return ($constitucion * 150);
@@ -18,7 +50,7 @@ function staminaPersonaje($stamina, $const)
 
 function manaPersonaje($int)
 {
-    return ($int * 200);
+    return ($int * 15);
 }
 
 function oroPersonaje($constitucion)

@@ -22,6 +22,11 @@ Route::group(['middleware' => ['isAuth']], function() { // isAuth exige que haya
     Route::get('entrenamiento', 'EntrenamientoController@index');
     Route::get('tutorialFirst', 'TutorialController@first');
 
+    Route::group(['middleware' => ['controlOro']], function() { // controlOro verifica si el usuario tiene la cantidad de oro necesaria para realizar la accion
+        Route::post('entrenamiento', 'EntrenamientoController@entrenar');
+     });
+
+    
      
     Route::group(['middleware' => ['isTutorial']], function() { // isTutorial exige que el usuario no haya completado los tutoriales
         Route::get('tutorial', 'TutorialController@index');
