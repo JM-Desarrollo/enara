@@ -19,7 +19,7 @@ class StatsMigration extends Migration
             $table->integer('agilidad');
             $table->integer('inteligencia');
             $table->integer('constitucion');
-            $table->integer('stamina');
+            $table->integer('stamina')->default(10);
             $table->integer('carisma');
             $table->integer('vida');
             $table->integer('vidaExtra');

@@ -14,6 +14,7 @@ class ClaseTableSeeder extends Seeder
     {
         App\Clase::create([
            'name' => 'Mago',
+           'img' => 'mago.png',
            'fuerza' => 0,
             'agilidad' => 0,
             'inteligencia' => 0,
@@ -50,6 +51,7 @@ class ClaseTableSeeder extends Seeder
 
        App\Clase::create([
            'name' => 'Guerrero',
+           'img' => 'guerrero.png',
            'fuerza' => 0,
             'agilidad' => 0,
             'inteligencia' => 0,
@@ -84,6 +86,7 @@ class ClaseTableSeeder extends Seeder
 
        App\Clase::create([
            'name' => 'Picaro',
+           'img' => 'picaro.png',
            'fuerza' => 0,
             'agilidad' => 0,
             'inteligencia' => 0,
@@ -118,6 +121,7 @@ class ClaseTableSeeder extends Seeder
 
        App\Clase::create([
            'name' => 'Paladin',
+           'img' => 'paladin.png',
            'fuerza' => 0,
             'agilidad' => 0,
             'inteligencia' => 0,
@@ -152,6 +156,7 @@ class ClaseTableSeeder extends Seeder
 
        App\Clase::create([
            'name' => 'Clerigo',
+           'img' => 'clerigo.png',
            'fuerza' => 0,
             'agilidad' => 0,
             'inteligencia' => 0,
@@ -186,40 +191,7 @@ class ClaseTableSeeder extends Seeder
 
        App\Clase::create([
            'name' => 'Arquero',
-           'fuerza' => 0,
-            'agilidad' => 0,
-            'inteligencia' => 0,
-            'constitucion' => 0,
-            'stamina' => 0,
-            'carisma' => 5,
-            'suerte' => 0,
-            'evasion' => 5,
-            'supervivencia' => 0,
-            'defensa' => 0,
-            'resMagica' => 15,
-            'domesticar' => 0,
-            'combateArms' => 0,
-            'combateDist' => 0,
-            'probCritico' => 0,
-            'combateArms' => 0,
-            'combateDist' => 0,
-            'probCritico' => 0,
-            'dannoCritico' => 0,
-            'bloqueo' => 0,
-            'regVida' => 0,
-            'regEnergia' => 0,
-            'regMana' => 10,
-            'velAtaque' => 0,
-            'pesca' => 0,
-            'manaExtra' => 50,
-            'mineria' => 0,
-            'herreria' => 0,
-            'carpinteria' => 0,
-            'sastreria' => 0
-       ]);
-
-       App\Clase::create([
-           'name' => 'Cazador',
+           'img' => 'arquero.png',
            'fuerza' => 0,
             'agilidad' => 0,
             'inteligencia' => 0,
