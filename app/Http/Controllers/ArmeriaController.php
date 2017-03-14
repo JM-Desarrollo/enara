@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Item;
 
 class ArmeriaController extends Controller
 {
     public function index(){
 
-        return view('armeria');
+        $escudos = Item::where('tipo', '=', 'escudo')->get();
+
+
+        return view('armeria', ['escudos' => $escudos]);
 
     }
 }

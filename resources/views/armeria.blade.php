@@ -36,9 +36,29 @@
 
 <div class="col-md-12">
     <div class="panel panel-warning">
-        <div class="panel-heading">Espadas, Dagas, Mandobles y Escudos</div>
+        <div class="panel-heading">Espadas y Dagas</div>
         <div class="panel-body">
             Contenido del panel
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="panel panel-warning">
+        <div class="panel-heading">Escudos</div>
+        <div class="panel-body">
+            <div class="col-md-12">
+                <table class="table table-hover">
+                    @foreach($escudos as $escudo)
+                        <tr>
+                            <td><img src="{{$escudo->img}}"></td>
+                            <td  style="vertical-align:middle;"><strong>{{$escudo->name}}</strong></td>
+                            <td><strong><img src="{{asset('images/personaje/oro.png')}} "> {{$escudo->precio}}</strong></td>
+                            <td><a href="#" class="btn btn-warning">Comprar</a></td>
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
         </div>
     </div>
 </div>
@@ -56,3 +76,4 @@
                     
 
 @endsection
+
