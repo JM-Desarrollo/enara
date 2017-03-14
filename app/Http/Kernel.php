@@ -61,5 +61,6 @@ class Kernel extends HttpKernel
         'sinTrabajo' => \App\Http\Middleware\TrabajoMiddleware::class,
         'conTrabajo' => \App\Http\Middleware\RecompensaTrabajoMiddleware::class,
         'controlOro' => \App\Http\Middleware\ControlOroMiddleware::class,
+        'isAdmin' => \App\Http\Middleware\AdminMiddleware::class,
     ];
 }

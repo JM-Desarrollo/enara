@@ -12,10 +12,15 @@
 */
 
 Route::get('bienvenido', function () {return view('welcome');}); // Vista para los Invitados
-
 Auth::routes(); // Rutas de Login y Registro
 
 Route::group(['middleware' => ['isAuth']], function() { // isAuth exige que haya un usuario conectado
+
+
+    Route::group(['middleware' => ['isAdmin']], function() { // isAdmin exige que el usuario sea administrador
+        Route::get('crearNota', 'AdminController@crearNota');
+        Route::post('crearNota', 'AdminController@GuardarNota');
+    });
 
     Route::get('/', 'UserController@index');
     Route::get('trabajo', 'TrabajoController@index');
