@@ -40,12 +40,12 @@
                     </form>
 
 
-                    @if (session('titulo'))
-                    <script>$(window).load(function(){$('#myModal').modal('show');});</script>
-                    {!! modal(session('titulo'), session('mensaje'), session('oro'), session('diamond')) !!}      
-                    
+                        @if (session('titulo'))
+                        <script>$(window).load(function(){$('#myModal').modal('show');});</script>
+                        {!! modal(session('titulo'), session('mensaje'), session('oro'), session('diamond')) !!}      
                         
-                    @endif
+                            
+                        @endif
 
                     <script>
                         function seleccionarJob($id, $name) {

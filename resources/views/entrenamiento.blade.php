@@ -12,6 +12,10 @@
                 </div>
                 @endif
 
+                @if (session('titulo'))
+                    <script>$(window).load(function(){$('#myModal').modal('show');});</script>
+                    {!! modal(session('titulo'), session('mensaje'), session('oro'), session('diamond')) !!}                    
+                @endif
                 
 
 
@@ -29,10 +33,10 @@
                                     <div class="col-md-12"><br /> 
                                         <div class="col-md-12 text-center ">
                                             <form method="POST" onsubmit="return entrenar()">
-                                            <button type="button" onclick="entrenar('{{entrenarOroInt()}}', 'inteligencia')" class="btn btn-success btn-block">Aumentar nivel de Inteligencia por <img src="{{asset ('images/personaje/oro.png')}}" alt="oro"> {{entrenarOroInt()}} </span></a>
+                                            <button type="button" onclick="entrenar('{{entrenarOroInt($stats->inteligencia)}}', 'inteligencia')" class="btn btn-success btn-block">Aumentar nivel de Inteligencia por <img src="{{asset ('images/personaje/oro.png')}}" alt="oro"> {{entrenarOroInt($stats->inteligencia)}} </span></a>
                                             </form>
                                         </div><br /> <br />  
-                                        <div class="col-md-12 text-center modalRec "><h5>Nivel actual de Inteligencia: {{Auth::User()->inteligencia}}</h5></div><br /><br />
+                                        <div class="col-md-12 text-center modalRec "><h5>Nivel actual de Inteligencia: {{$stats->inteligencia}}</h5></div><br /><br />
                                         <br /><br /> <h6 class="text-center modalRec">Posibilidad de mejorar el stat de Magia</h6>
                                     </div>
                                 </div>
@@ -51,9 +55,9 @@
                                     </div>
                                     <div class="col-md-12"><br /> 
                                         <div class="col-md-12 text-center">
-                                            <button type="button" onclick="entrenar('{{entrenarOroFue()}}', 'fuerza')" class="btn btn-success btn-block">Aumentar nivel de Fuerza por <img src="{{asset ('images/personaje/oro.png')}}" alt="oro"> {{entrenarOroFue()}} </span></a>
+                                            <button type="button" onclick="entrenar('{{entrenarOroFue($stats->fuerza)}}', 'fuerza')" class="btn btn-success btn-block">Aumentar nivel de Fuerza por <img src="{{asset ('images/personaje/oro.png')}}" alt="oro"> {{entrenarOroFue($stats->fuerza)}} </span></a>
                                         </div><br /> <br />  
-                                        <div class="col-md-12 text-center modalRec "><h5>Nivel actual de Fuerza: {{Auth::User()->fuerza}}</h5></div><br /> <br /> 
+                                        <div class="col-md-12 text-center modalRec "><h5>Nivel actual de Fuerza: {{$stats->fuerza}}</h5></div><br /> <br /> 
                                         <br /><br /> <h6 class="text-center modalRec">Posibilidad de mejorar el stat de Defensa</h6>
                                     </div>
                                 </div>
@@ -72,9 +76,9 @@
                                     </div>
                                     <div class="col-md-12"><br /> 
                                         <div class="col-md-12 text-center">
-                                            <button type="button" onclick="entrenar('{{entrenarOroCar()}}', 'carisma')" class="btn btn-success btn-block">Aumentar nivel de Carisma por <img src="{{asset ('images/personaje/oro.png')}}" alt="oro"> {{entrenarOroCar()}} </span></a>
+                                            <button type="button" onclick="entrenar('{{entrenarOroCar($stats->carisma)}}', 'carisma')" class="btn btn-success btn-block">Aumentar nivel de Carisma por <img src="{{asset ('images/personaje/oro.png')}}" alt="oro"> {{entrenarOroCar($stats->carisma)}} </span></a>
                                         </div><br /> <br />  
-                                        <div class="col-md-12 text-center modalRec "><h5>Nivel actual de Carisma: {{Auth::User()->carisma}}</h5></div><br /> <br /> 
+                                        <div class="col-md-12 text-center modalRec "><h5>Nivel actual de Carisma: {{$stats->carisma}}</h5></div><br /> <br /> 
                                         <br /><br /> <h6 class="text-center modalRec">Posibilidad de mejorar el stat de Comercio</h6>   
                                     </div>
                                 </div>
@@ -93,9 +97,9 @@
                                     </div>
                                     <div class="col-md-12"><br /> 
                                         <div class="col-md-12 text-center">
-                                            <button type="button" onclick="entrenar('{{entrenarOroAgi()}}', 'agilidad')" class="btn btn-success btn-block">Aumentar nivel de Agilidad por <img src="{{asset ('images/personaje/oro.png')}}" alt="oro"> {{entrenarOroAgi()}} </span></a>
+                                            <button type="button" onclick="entrenar('{{entrenarOroAgi($stats->agilidad)}}', 'agilidad')" class="btn btn-success btn-block">Aumentar nivel de Agilidad por <img src="{{asset ('images/personaje/oro.png')}}" alt="oro"> {{entrenarOroAgi($stats->agilidad)}} </span></a>
                                         </div><br /> <br />  
-                                        <div class="col-md-12 text-center modalRec "><h5>Nivel actual de Agilidad: {{Auth::User()->agilidad}}</h5></div><br /> <br /> 
+                                        <div class="col-md-12 text-center modalRec "><h5>Nivel actual de Agilidad: {{$stats->agilidad}}</h5></div><br /> <br /> 
                                         <br /><br /> <h6 class="text-center modalRec">Posibilidad de mejorar el stat de Evasion</h6>
                                     </div>
                                 </div>
@@ -114,9 +118,9 @@
                                     </div>
                                     <div class="col-md-12"><br /> 
                                         <div class="col-md-12 text-center">
-                                            <button type="button" onclick="entrenar('{{entrenarOroCon()}}', 'const')" class="btn btn-success btn-block">Aumentar nivel de Constitucion por <img src="{{asset ('images/personaje/oro.png')}}" alt="oro"> {{entrenarOroCon()}} </span></a>
+                                            <button type="button" onclick="entrenar('{{entrenarOroCon($stats->constitucion)}}', 'constitucion')" class="btn btn-success btn-block">Aumentar nivel de Constitucion por <img src="{{asset ('images/personaje/oro.png')}}" alt="oro"> {{entrenarOroCon($stats->constitucion)}} </span></a>
                                         </div><br /> <br />  
-                                        <div class="col-md-12 text-center modalRec "><h5>Nivel actual de Constitucion: {{Auth::User()->const}}</h5></div><br /> <br /> 
+                                        <div class="col-md-12 text-center modalRec "><h5>Nivel actual de Constitucion: {{$stats->constitucion}}</h5></div><br /> <br /> 
                                         <br /><br /> <h6 class="text-center modalRec">Posibilidad de mejorar el stat de Supervivencia</h6>
                                     </div>
                                 </div>
@@ -136,9 +140,9 @@
                                     </div>
                                     <div class="col-md-12"><br /> 
                                         <div class="col-md-12 text-center">
-                                            <button type="button" onclick="entrenar('{{entrenarOroSta()}}', 'stamina')" class="btn btn-success btn-block">Aumentar nivel de Stamina por <img src="{{asset ('images/personaje/oro.png')}}" alt="oro"> {{entrenarOroSta()}} </span></a>
+                                            <button type="button" onclick="entrenar('{{entrenarOroSta($stats->stamina)}}', 'stamina')" class="btn btn-success btn-block">Aumentar nivel de Stamina por <img src="{{asset ('images/personaje/oro.png')}}" alt="oro"> {{entrenarOroSta($stats->stamina)}} </span></a>
                                         </div><br /> <br />  
-                                        <div class="col-md-12 text-center modalRec "><h5>Nivel actual de Stamina: {{Auth::User()->stamina}}</h5></div><br /> <br /> 
+                                        <div class="col-md-12 text-center modalRec "><h5>Nivel actual de Stamina: {{$stats->stamina}}</h5></div><br /> <br /> 
                                         <br /><br /> <h6 class="text-center modalRec">Posibilidad de mejorar el stat de Energia</h6>
                                     </div>
                                 </div>

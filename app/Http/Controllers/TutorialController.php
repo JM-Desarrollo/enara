@@ -58,43 +58,120 @@ class TutorialController extends Controller
     }
 
     public function alquimista(){
-        $titulo = "Tutorial de Alquimia";
-        $cuerpo = "Para trabajar debes primero elegir el tipo de trabajo, segun lo que sea cuesta mas tiempo finalizarlo pero te dara mayores recomenpsas.";
+        $titulo = "Tutorial de Pociones";
+        $cuerpo = "EN CONSTRUCCION.";
+        $oro = 1500;
+        $diamond = 10;
+
+        $user = User::findOrFail(Auth::User()->id);
+        $user->gold += $oro;
+        $user->diamond +=$diamond;
+        $user->save();
+
+        $tutoriales = Tutorial::where('idUser', '=', Auth::User()->id)->first();
+        $tutoriales->alquimista = 1;
+        $tutoriales->save();
+        
+
         return redirect('alquimista')
                                 ->with('titulo', $titulo)
-                                ->with('mensaje', $cuerpo);
+                                ->with('mensaje', $cuerpo)
+                                ->with('diamond', $diamond)
+                                ->with('oro', $oro);
     }
 
     public function armeria(){
         $titulo = "Tutorial de Armeria";
-        $cuerpo = "Para trabajar debes primero elegir el tipo de trabajo, segun lo que sea cuesta mas tiempo finalizarlo pero te dara mayores recomenpsas.";
+        $cuerpo = "Bienvenido a la tienda de armas de Enara! En esta tienda podras encontrar variedad de armas, dagas, mandobles, escudos y mucho mas! <br />
+        Si necesitas comprar alguna de las armas. Si tienes un alto nivel de carisma conseguiras mejores precios.";
+        $oro = 800;
+        $diamond = 7;
+
+        $user = User::findOrFail(Auth::User()->id);
+        $user->gold += $oro;
+        $user->diamond +=$diamond;
+        $user->save();
+
+        $tutoriales = Tutorial::where('idUser', '=', Auth::User()->id)->first();
+        $tutoriales->armero = 1;
+        $tutoriales->save();
+        
+
         return redirect('armeria')
                                 ->with('titulo', $titulo)
-                                ->with('mensaje', $cuerpo);
+                                ->with('mensaje', $cuerpo)
+                                ->with('diamond', $diamond)
+                                ->with('oro', $oro);
     }
 
     public function entrenamiento(){
-        $titulo = "Tutorial de Entrenamiento";
-        $cuerpo = "Para trabajar debes primero elegir el tipo de trabajo, segun lo que sea cuesta mas tiempo finalizarlo pero te dara mayores recomenpsas.";
+        $titulo = "Tutorial de entrenamiento";
+        $cuerpo = "Existen 6 maestros de entrenamiento, cada uno especializado en una rama (Fuerza, Agilidad, Constitucion, Energia e Inteligencia). Podras entrenar cada habilidad con ellos, pero cada uno te  pedira
+        una determinada suma de dinero..u otros objetos.";
+        $oro = 700;
+        $diamond = 5;
+
+        $user = User::findOrFail(Auth::User()->id);
+        $user->gold += $oro;
+        $user->diamond +=$diamond;
+        $user->save();
+
+        $tutoriales = Tutorial::where('idUser', '=', Auth::User()->id)->first();
+        $tutoriales->entrenamiento = 1;
+        $tutoriales->save();
+        
+
         return redirect('entrenamiento')
                                 ->with('titulo', $titulo)
-                                ->with('mensaje', $cuerpo);
+                                ->with('mensaje', $cuerpo)
+                                ->with('diamond', $diamond)
+                                ->with('oro', $oro);
     }
 
-    public function herrero(){
+    public function herreria(){
         $titulo = "Tutorial de Herreria";
-        $cuerpo = "Para trabajar debes primero elegir el tipo de trabajo, segun lo que sea cuesta mas tiempo finalizarlo pero te dara mayores recomenpsas.";
-        return redirect('herrero')
+        $cuerpo = "EN CONSTRUCCION";
+        $oro = 1000;
+        $diamond = 5;
+
+        $user = User::findOrFail(Auth::User()->id);
+        $user->gold += $oro;
+        $user->diamond +=$diamond;
+        $user->save();
+
+        $tutoriales = Tutorial::where('idUser', '=', Auth::User()->id)->first();
+        $tutoriales->herrero = 1;
+        $tutoriales->save();
+        
+
+        return redirect('herreria')
                                 ->with('titulo', $titulo)
-                                ->with('mensaje', $cuerpo);
+                                ->with('mensaje', $cuerpo)
+                                ->with('diamond', $diamond)
+                                ->with('oro', $oro);
     }
 
-    public function sastre(){
+    public function sastreria(){
         $titulo = "Tutorial de Sastreria";
-        $cuerpo = "Para trabajar debes primero elegir el tipo de trabajo, segun lo que sea cuesta mas tiempo finalizarlo pero te dara mayores recomenpsas.";
-        return redirect('sastre')
+        $cuerpo = "EN CONSTRUCCION.";
+        $oro = 1500;
+        $diamond = 10;
+
+        $user = User::findOrFail(Auth::User()->id);
+        $user->gold += $oro;
+        $user->diamond +=$diamond;
+        $user->save();
+
+        $tutoriales = Tutorial::where('idUser', '=', Auth::User()->id)->first();
+        $tutoriales->sastre = 1;
+        $tutoriales->save();
+        
+
+        return redirect('sastreria')
                                 ->with('titulo', $titulo)
-                                ->with('mensaje', $cuerpo);
+                                ->with('mensaje', $cuerpo)
+                                ->with('diamond', $diamond)
+                                ->with('oro', $oro);
     }
     
 }

@@ -10,7 +10,7 @@
                             
                         @endif
 
-<div class="text-center"><h3>Sastreria</h3>
+<div class="text-center"><h3>Herreria</h3>
     <img src="{{asset('images/enConstruccion.png')}} "></div>
 
 

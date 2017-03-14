@@ -2,6 +2,7 @@
 use App\Tutorial;
 use App\Raza;
 use App\Clase;
+use App\Stats;
 
 function traerRazas()
 {
@@ -14,57 +15,68 @@ function traerClases()
 }
 
 // Modificadores para aumentar el nivel de los stats //
-function entrenarOroInt()
+function entrenarOroInt($stat)
 {
-    return (Auth::User()->inteligencia * 275);
+    return ($stat * 275);
 }
 
-function entrenarOroFue()
+function entrenarOroFue($stat)
 {
-    return (Auth::User()->fuerza * 325);
+    return ($stat * 325);
 }
 
-function entrenarOroCar()
+function entrenarOroCar($stat)
 {
-    return (Auth::User()->carisma * 515);
+    return ($stat * 515);
 }
 
-function entrenarOroAgi()
+function entrenarOroAgi($stat)
 {
-    return (Auth::User()->agilidad * 418);
+    return ($stat * 418);
 }
 
-function entrenarOroCon()
+function entrenarOroCon($stat)
 {
-    return (Auth::User()->const * 215);
+    return ($stat * 215);
 }
 
-function entrenarOroSta()
+function entrenarOroSta($stat)
 {
-    return (Auth::User()->stamina * 2700);
+    return ($stat * 2700);
 }
 
 ///////////////////////////////////////////////////////
-function vidaPersonaje($constitucion)
+function statsPersonaje($id)
 {
-    return ($constitucion * 150);
+    $stats = Stats::where('idUser', '=', $id)->first();
+    return ($stats);
 }
 
-function staminaPersonaje($stamina, $const)
+function vidaMaxima($id)
 {
-    return ($stamina + ($const * 5));
+    $stats = Stats::where('idUser', '=', $id)->first();
+    $vidaMaxima = ($stats->constitucion * 50) + $stats->vidaExtra;
+    
+    return ($vidaMaxima);
 }
 
-function manaPersonaje($int)
+function manaMaxima($id)
 {
-    return ($int * 15);
+    $stats = Stats::where('idUser', '=', $id)->first();
+    $manaMaxima = ($stats->inteligencia * 5) + $stats->manaExtra;
+    
+    return ($manaMaxima);
 }
 
-function oroPersonaje($constitucion)
+function energiaMaxima($id)
 {
-    return ($constitucion * 150);
+    $stats = Stats::where('idUser', '=', $id)->first();
+    $energiaMaxima = ($stats->constitucion * 0.5) + $stats->energiaExtra + ($stats->stamina * 1.75);
+    
+    return ($energiaMaxima);
 }
 
+////////////////////////////////////////////////////////////
 function tutoriales()
 {
     $user = Auth::User()->id;
@@ -86,7 +98,7 @@ function tutoriales()
 
     if(!$tutorial->armero){
         $mensaje =  "
-                        <b>(31/6) Tutorial de Armeria:</b> Conoce como funciona el sistema de armeria en Enara. <a href='armeriaTutorial'>Ingresa desde aqui</a>
+                        <b>(3/6) Tutorial de Armeria:</b> Conoce la tienda de armeria en Enara. <a href='armeriaTutorial'>Ingresa desde aqui</a>
                     ";
         return ($mensaje);
     }
@@ -119,6 +131,9 @@ function tutorialesActivos()
 {
     $user = Auth::User()->id;
     $tutorial = Tutorial::where('idUser', '=', $user)->first();
+    if($tutorial->trabajo && $tutorial->entrenamiento && $tutorial->armero && $tutorial->herrero && $tutorial->alquimista && $tutorial->sastre){
+        $tutorial->estado = 0;
+    }
     
     return ($tutorial->estado);
 }
