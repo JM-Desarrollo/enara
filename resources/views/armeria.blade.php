@@ -10,7 +10,7 @@
                             
                         @endif
 
-<h3>Armeria</h3>
+<h3>Armeria </h3>
 
 <div class="col-md-12">
     <div class="col-md-6">
