@@ -26,7 +26,7 @@ class TutorialController extends Controller
         $userJob->idUser = Auth::user()->id;
         $userJob->save();   
 
-        $stats = new Stat();
+        $stats = new Stats();
         
 
 
