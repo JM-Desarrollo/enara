@@ -16,10 +16,16 @@ Auth::routes(); // Rutas de Login y Registro
 
 Route::group(['middleware' => ['isAuth']], function() { // isAuth exige que haya un usuario conectado
 
+    Route::get('newPlayer', 'UserController@newPlayer');
+    Route::post('newPlayer', 'UserController@saveNewPlayer');
+
     Route::group(['middleware' => ['isAdmin']], function() { // isAdmin exige que el usuario sea administrador
             Route::get('crearNota', 'AdminController@crearNota');
             Route::post('crearNota', 'AdminController@GuardarNota');
         });
+
+
+    
 
     Route::group(['middleware' => ['controlPersonaje']], function() { // revisa que los stats maximos sean correctos
 
@@ -30,7 +36,6 @@ Route::group(['middleware' => ['isAuth']], function() { // isAuth exige que haya
         Route::get('alquimista', 'AlquimistaController@index');
         Route::get('sastreria', 'SastreriaController@index');
         Route::get('herreria', 'HerreriaController@index');
-        Route::get('tutorialFirst', 'TutorialController@first');
 
         Route::group(['middleware' => ['controlOro']], function() { // controlOro verifica si el usuario tiene la cantidad de oro necesaria para realizar la accion
             Route::post('entrenamiento', 'EntrenamientoController@entrenar');

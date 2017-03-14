@@ -16,23 +16,6 @@ class TutorialController extends Controller
     
     }
 
-    public function first(){
-
-        $tutorial = new Tutorial();
-        $tutorial->idUser = Auth::user()->id;
-        $tutorial->save();
-
-        $userJob = new UserJob();  
-        $userJob->idUser = Auth::user()->id;
-        $userJob->save();   
-
-        $stats = new Stats();
-        
-
-
-        return redirect('tutorial');
-    
-    }
 
     public function trabajo(){
         $titulo = "Tutorial de Trabajo (FALTA QUE SI TRABAJA NO PUEDA HACER OTRA COSA)";

@@ -17,6 +17,7 @@ class PersonajeControlMiddleware
      */
     public function handle($request, Closure $next)
     {
+                
         $id = Auth::User()->id;
         $stats = Stats::where('idUser', '=', Auth::User()->id)->first();
         $vidaMax = vidaMaxima($id);
