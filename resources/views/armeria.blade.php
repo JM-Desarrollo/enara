@@ -54,7 +54,7 @@
                             <td><img src="{{$escudo->img}}"></td>
                             <td  style="vertical-align:middle;"><strong>{{$escudo->name}}</strong></td>
                             <td><strong><img src="{{asset('images/personaje/oro.png')}} "> {{$escudo->precio}}</strong></td>
-                            <td><a href="#" class="btn btn-warning">Comprar</a></td>
+                            <td><a href="comprar/{{$escudo->id}} " class="btn btn-warning">Comprar</a></td>
                         </tr>
                     @endforeach
                 </table>

@@ -17,11 +17,11 @@ class ItemTableSeeder extends Seeder
             'img' => 'images/items/escudos/escudo_(1).png',
             'precio' => 500,
             'levelMin' => 1,
-            'defensa' => 5,
-            'agilidad' => 0,
-            'bloqueo' => 10,
+            'habilidades' => serialize(array('defensa' => 50, 'evasion' => 30)),
+ 
+           
        ]);
-
+/*
        App\Item::create([
             'name' => 'Escudo de Roble',
             'tipo' => 'escudo',
@@ -100,7 +100,7 @@ class ItemTableSeeder extends Seeder
             'bloqueo' => 10,
        ]);
 
-         
+      */   
     }
 }
 

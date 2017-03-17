@@ -10,8 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Item;
 
 Route::get('bienvenido', function () {return view('welcome');}); // Vista para los Invitados
+Route::get('a', function () {
+    
+    $item = new Item();
+    $item = Item::where('id', '=', 1)->first();
+    return view('a', ['item' => $item]);}); // BORRAR
+
+
 Auth::routes(); // Rutas de Login y Registro
 
 Route::group(['middleware' => ['isAuth']], function() { // isAuth exige que haya un usuario conectado
@@ -30,9 +38,15 @@ Route::group(['middleware' => ['isAuth']], function() { // isAuth exige que haya
     Route::group(['middleware' => ['controlPersonaje']], function() { // revisa que los stats maximos sean correctos
 
         Route::get('/', 'UserController@index');
+
+        Route::get('inventario', 'UserController@inventario');
+        Route::get('personaje', 'UserController@personaje');
         Route::get('trabajo', 'TrabajoController@index');
         Route::get('entrenamiento', 'EntrenamientoController@index');
+
         Route::get('armeria', 'ArmeriaController@index');
+        Route::get('comprar/{id}', 'ComprasController@index'); // Metodo inseguro, te cambian el id del get y compran lo que quieren
+
         Route::get('alquimista', 'AlquimistaController@index');
         Route::get('sastreria', 'SastreriaController@index');
         Route::get('herreria', 'HerreriaController@index');

@@ -9,6 +9,7 @@ use App\Tutorial;
 use App\UserJob;
 use App\Stats;
 use App\User;
+use App\Inventario;
 
 class UserController extends Controller
 {
@@ -20,24 +21,20 @@ class UserController extends Controller
     
     }
 
-    public function first(){
-
-        $tutorial = new Tutorial();
-        $tutorial->idUser = Auth::user()->id;
-        $tutorial->save();
-
-        $userJob = new UserJob();  
-        $userJob->idUser = Auth::user()->id;
-        $userJob->save();   
-
-        $stats = new Stats();
-
-        return redirect('tutorial');
-    }
 
     public function newPlayer(){
 
         return view('newPlayer');
+    }
+
+    public function inventario(){
+
+        return view('inventario');
+    }
+
+    public function personaje(){
+
+        return view('personaje');
     }
 
     public function saveNewPlayer(Request $request){
@@ -70,6 +67,13 @@ class UserController extends Controller
         $tutorial->idUser = $idUsuario;
         $tutorial->save();
 
+        $inventario = new Inventario();
+        $inventario->idUser = Auth::user()->id;
+        $inventario->save();
+
+        $userJob = new UserJob();  
+        $userJob->idUser = Auth::user()->id;
+        $userJob->save(); 
 
 
         return redirect('tutorial');
