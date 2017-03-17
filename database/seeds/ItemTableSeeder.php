@@ -17,7 +17,7 @@ class ItemTableSeeder extends Seeder
             'img' => 'images/items/escudos/escudo_(1).png',
             'precio' => 500,
             'levelMin' => 1,
-            'habilidades' => serialize(array('defensa' => 50, 'evasion' => 30)),
+            'habilidades' => implode(',', array('defensa', 50, 'evasion', 30)),
  
            
        ]);

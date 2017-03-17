@@ -165,11 +165,26 @@ function modal($t, $m, $o, $d){
     return $modal;
 }
 
+
 function getItem($id){
 
     $item = Item::find($id);
     
     return $item;
+}
+
+function traerHabilidades($hab){
+
+    $hab = explode(',', $hab);
+    $habilidades = "";
+
+    $i = 0;
+    while ($i != null) {
+        $habilidades += $hab[$i] . ": " . $hab[$i+1];
+        $i = $i +2;
+    }
+
+    return $habilidades;
 }
 
 
