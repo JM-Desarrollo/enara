@@ -1,6 +1,7 @@
 <?php
 use App\Tutorial;
 use App\Raza;
+use App\Item;
 use App\Clase;
 use App\Stats;
 
@@ -164,5 +165,11 @@ function modal($t, $m, $o, $d){
     return $modal;
 }
 
+function getItem($id){
+
+    $item = Item::find($id);
+    
+    return $item;
+}
 
 

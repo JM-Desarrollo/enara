@@ -20,7 +20,7 @@ class CreateItemTable extends Migration
             $table->string('img');
             $table->integer('precio')->default(1);
             $table->integer('levelMin')->default(1);
-            $table->text('habilidades')->default(null);
+            $table->text('habilidades')->nullable();
             $table->timestamps();
         });
     }

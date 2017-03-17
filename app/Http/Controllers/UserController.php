@@ -29,12 +29,18 @@ class UserController extends Controller
 
     public function inventario(){
 
-        return view('inventario');
+
+        $inventario = Inventario::where('idUser', '=', Auth::User()->id )->first();
+        $array = explode(',', $inventario->inventario);
+
+        return view('inventario', ['items' => $array, 'inv' => $inventario]);
     }
 
     public function personaje(){
 
-        return view('personaje');
+        $personaje = Stats::where('idUser', '=', Auth::User()->id)->first();
+
+        return view('personaje', ['personaje' => $personaje]);
     }
 
     public function saveNewPlayer(Request $request){
@@ -69,6 +75,19 @@ class UserController extends Controller
 
         $inventario = new Inventario();
         $inventario->idUser = Auth::user()->id;
+        $inventario->save();
+
+        $inventario = Inventario::where('idUser', '=', $idUsuario )->first();
+
+        for($i=0; $i<($inventario->capacidad * 2); $i=$i+2){
+
+            $array[$i] = null;
+            $array[$i+1] = null;
+        }
+
+   
+        $array = implode(',',$array);
+        $inventario->inventario = $array;
         $inventario->save();
 
         $userJob = new UserJob();  

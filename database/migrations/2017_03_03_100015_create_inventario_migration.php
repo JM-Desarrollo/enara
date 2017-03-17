@@ -15,10 +15,9 @@ class CreateInventarioMigration extends Migration
     {
         Schema::create('inventario', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('espacio')->default(12);
-            $table->text('items')->default(0);
             $table->integer('idUser')->unsigned()->index()->nullable();
-            
+            $table->text('inventario')->nullable();
+            $table->integer('capacidad')->default(12);
             $table->foreign('idUser')->references('id')->on('users')->onDelete('set null');
             $table->timestamps();
         });
