@@ -166,25 +166,36 @@ function modal($t, $m, $o, $d){
 }
 
 
-function getItem($id){
+function getItem($itemsInv){
 
-    $item = Item::find($id);
+    $itemsInv = explode(",", $itemsInv);
     
-    return $item;
+    //dd($itemsInv);
+    return $itemsInv;
 }
 
-function traerHabilidades($hab){
+function traerItem($itemSelect){
 
+    $itemSelect = Item::find($itemSelect);
+    
+    //dd($itemSelect);
+    return $itemSelect;
+}
+
+function habilidadItem($hab){
+    
     $hab = explode(',', $hab);
-    $habilidades = "";
+    $mensaje = "Habilidades: ";
 
     $i = 0;
-    while ($i != null) {
-        $habilidades += $hab[$i] . ": " . $hab[$i+1];
-        $i = $i +2;
+    while (!(empty($hab[$i+1]))) {
+        $mensaje = $mensaje . "<b>" . $hab[$i] . ":</b> " . $hab[$i+1] . " | ";
+        $i = $i+2;
     }
 
-    return $habilidades;
+
+
+    return $mensaje;
 }
 
 

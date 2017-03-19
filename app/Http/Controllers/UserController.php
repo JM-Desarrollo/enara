@@ -29,11 +29,9 @@ class UserController extends Controller
 
     public function inventario(){
 
-
         $inventario = Inventario::where('idUser', '=', Auth::User()->id )->first();
-        $array = explode(',', $inventario->inventario);
 
-        return view('inventario', ['items' => $array, 'inv' => $inventario]);
+        return view('inventario', ['inv' => $inventario]);
     }
 
     public function personaje(){

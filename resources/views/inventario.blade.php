@@ -7,19 +7,25 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="col-md-12 text-center">
-                            @for($i = 0; $i < ($inv->capacidad * 2); $i= $i+2)
-                                @php $item = getItem($items[$i]) @endphp
+                            @php $itemInv = getItem($inv->inventario) @endphp <!-- Devuelvo un array donde el subindice par representa el item y el impar la cantidad -->
+
+                            @for($i = 0; $i < ($inv->capacidad); $i= $i+2)
                                 <div class="col-md-1">
-                                    @if($items[$i] != null)
-                                        <img src="{{$item['img']}}"  onclick="abrirMenuItem( '{{$item['name']}}', '{{$item['img']}}', '{{$item['precio']}}', '{{$item['habilidades']}}' )">  <!-- | Cantidad: {{$items[$i+1]}} -->
+                                    @if($itemInv[$i] != null)
+                                        @php $itemSelect = traerItem($itemInv[$i]) @endphp
+                                        @php $itemHab = habilidadItem($itemSelect->habilidades) @endphp
+                                        <img src="{{$itemSelect->img}}"  onclick="abrirMenuItem( '{{$itemSelect->name}}', '{{$itemSelect->img}}', {{$itemSelect->precio}}, '{{$itemHab}}' )">
                                        
                                         @else
+                                         <div class="col-md-1"><img src="{{asset('images/items/vacio.png')}}"></div>
                                     @endif
                                 </div>
                             @endfor
+
                         </div>
                     </div>
                 </div>
+
                 <!-- MODAL -->
                 <div class="container">
                     <div class='modal fade' id='myModal' role='dialog'>
@@ -46,8 +52,8 @@
                         document.getElementById("nombreObjeto").innerHTML = $nombre;
                         document.getElementById("precioReventa").innerHTML = $precio * 0.45;
                         document.getElementById("imgModal").src = $img;
-                        $habilidades = traerHabilidades($hab);
-                        document.getElementById("habObjeto").innerHTML = $habilidades;
+                        document.getElementById("habObjeto").innerHTML = $hab;    
+
 
                         $('#myModal').modal('show');
                     }
