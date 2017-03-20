@@ -1,63 +1,66 @@
 @extends('master')  @section('titulo', 'Home')   @section('contenido')
 
+@php $itemInv = getItem($inv->inventario) @endphp <!-- Devuelvo un array donde el subindice par representa el item y el impar la cantidad -->
 
-
-                <h2 class="text-center">Inventario</h2><br />
+                <h2 class="text-center">Inventario | Capacidad: {{$inv->capacidad}} </h2><br />          
 
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="col-md-12 text-center">
-                            @php $itemInv = getItem($inv->inventario) @endphp <!-- Devuelvo un array donde el subindice par representa el item y el impar la cantidad -->
-
-                            @for($i = 0; $i < ($inv->capacidad); $i= $i+2)
-                                <div class="col-md-1">
+                            <div class="col-md-6 text-center">
+                                @for($i = 0; $i < ($inv->capacidad * 2); $i= $i+2)
+                    
                                     @if($itemInv[$i] != null)
-                                        @php $itemSelect = traerItem($itemInv[$i]) @endphp
-                                        @php $itemHab = habilidadItem($itemSelect->habilidades) @endphp
-                                        <img src="{{$itemSelect->img}}"  onclick="abrirMenuItem( '{{$itemSelect->name}}', '{{$itemSelect->img}}', {{$itemSelect->precio}}, '{{$itemHab}}' )">
-                                       
+                                        <div class="col-md-2">
+                                            @php $itemSelect = traerItem($itemInv[$i]) @endphp
+                                            @php $itemHab = habilidadItem($itemSelect->habilidades) @endphp
+                                            
+                                            <img src="{{$itemSelect->img}}" class="{{$itemSelect->calidad}}"  onmouseover="this.className='seleccionado'" onmouseout="this.className='{{$itemSelect->calidad}} '" onclick="abrirMenuItem({{$itemSelect->id}}, '{{$itemSelect->name}}', '{{$itemHab}}', {{$itemSelect->precio}}, '{{$itemSelect->calidad}}', '{{$itemSelect->tipo}}')">
+                                            <br /><br />
+                                        </div>
                                         @else
-                                         <div class="col-md-1"><img src="{{asset('images/items/vacio.png')}}"></div>
+                                         <div class="col-md-2"><img src="{{asset('images/items/vacio.png')}}" class="vacio"><br /><br /></div>
                                     @endif
-                                </div>
-                            @endfor
+                                
+                                @endfor
 
-                        </div>
-                    </div>
-                </div>
+                            </div>
 
-                <!-- MODAL -->
-                <div class="container">
-                    <div class='modal fade' id='myModal' role='dialog'>
-                        <div class='modal-dialog'>
-                            <div class='modal-content'>
-                                <div class='modal-header'><h4 id="nombreModal" class='modal-title text-center'>Informacion del Item</h4></div>
-                                <div class='modal-body'>
-                                    <p class="text-center">
-                                        <span id="nombreObjeto"><!-- Nombre del Objeto --></span><br /><img id="imgModal" src=""><br /><br />
-                                         <span id="habObjeto"><!-- Habilidades del Objeto --></span><br /><br />
-                                        <a href="#" class="btn btn-warning">Vender por <img src="{{asset('images/personaje/oro.png')}}" /> <b id="precioReventa"><!-- Precio del Objeto --></b></a>
-                                    </p>
-                                </div>
-                                <div class='modal-footer'>
-                                    <p class='modalRec'></p> <button type='button' class='btn btn-default btn-enara' data-dismiss='modal'>Cerrar</button>
+
+                            <div class="col-md-6 text-center">
+                                <div id="detalleItem" class="divItemDetalle"></div>
+                                <div id="detalleItem2" class="divItemDetalle2">
+                                    <br />
+                                    <button type="button"  onclick="vender()" class="btn btn-warning">Vender por <img src='{{asset('images/personaje/oro.png')}}'/> <b id="botonVenta">100</b></button><br /><br />
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
+
+                        </div><!-- col-md-12 text-center -->
+                    </div><!-- panel-body -->
+                </div><!-- panel panel-default -->
+
+                <form role="form"  id="formVenta" method="POST" action="venderItem">{{ csrf_field() }}
+                    <input type="hidden" id="idVenta" name="idVenta" value="">
+                    <input type="hidden" id="precioVenta" name="precioVenta" value="">
+                    <input type="hidden" id="tipoVenta" name="tipoVenta" value="">
+                </form>
 
                 <script>
-                    function abrirMenuItem($nombre, $img, $precio, $hab) {
-                        document.getElementById("nombreObjeto").innerHTML = $nombre;
-                        document.getElementById("precioReventa").innerHTML = $precio * 0.45;
-                        document.getElementById("imgModal").src = $img;
-                        document.getElementById("habObjeto").innerHTML = $hab;    
+                    function abrirMenuItem($id, $nombre, $hab, $precio, $calidad, $tipo){
+                        $("#idVenta").val($id);
+                        $("#precioVenta").val($precio * 0.35);
+                        $("#botonVenta").html($precio * 0.35);
+                        $("#tipoVenta").val($tipo);
+                        $("#detalleItem2").show();
+                        $("#detalleItem").html("<b>Informacion del Item</b><br />" + $nombre + "<br /><u>Calidad del Item: " + $calidad + "</u><br /><br /><b>Habilidades</b><br />" + $hab + 
+                        "<br /><br /><a href='' class='btn btn-success'> <b>Equipar</b></a><br />");                      
 
+                    }
 
-                        $('#myModal').modal('show');
+                    function vender($precio, $id, $tipo){
+                        $("#formVenta").submit();
+                       
                     }
                 </script>
-
 
     @endsection

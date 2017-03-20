@@ -185,11 +185,11 @@ function traerItem($itemSelect){
 function habilidadItem($hab){
     
     $hab = explode(',', $hab);
-    $mensaje = "Habilidades: ";
+    $mensaje = "";
 
     $i = 0;
     while (!(empty($hab[$i+1]))) {
-        $mensaje = $mensaje . "<b>" . $hab[$i] . ":</b> " . $hab[$i+1] . " | ";
+        $mensaje = $mensaje . "<b>" . $hab[$i] . ":</b> " . $hab[$i+1] . "<br /> ";
         $i = $i+2;
     }
 

@@ -22,5 +22,6 @@ class ControlOroMiddleware
 
         return redirect('entrenamiento')->with('error', '<b>Error!</b> No posees el oro suficiente para mejorar tu nivel de '. $request->stat . '.');
         
+        
     }
 }

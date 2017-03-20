@@ -27,12 +27,7 @@ class UserController extends Controller
         return view('newPlayer');
     }
 
-    public function inventario(){
-
-        $inventario = Inventario::where('idUser', '=', Auth::User()->id )->first();
-
-        return view('inventario', ['inv' => $inventario]);
-    }
+    
 
     public function personaje(){
 

@@ -63,5 +63,6 @@ class Kernel extends HttpKernel
         'controlOro' => \App\Http\Middleware\ControlOroMiddleware::class,
         'isAdmin' => \App\Http\Middleware\AdminMiddleware::class,
         'controlPersonaje' => \App\Http\Middleware\PersonajeControlMiddleware::class,
+        'controlCompra' => \App\Http\Middleware\ControlCompraMiddleware::class
     ];
 }

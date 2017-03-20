@@ -18,6 +18,7 @@ class CreateItemTable extends Migration
             $table->enum('tipo', ['escudo', 'casco', 'armadura', 'tunica']);
             $table->string('name');
             $table->string('img');
+            $table->enum('calidad', ['comun', 'raro', 'epico', 'legendario', 'mistico']);
             $table->integer('precio')->default(1);
             $table->integer('levelMin')->default(1);
             $table->text('habilidades')->nullable();

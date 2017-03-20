@@ -6,25 +6,28 @@ use Illuminate\Http\Request;
 use App\Item;
 use App\Inventario;
 use App\Stats;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class ComprasController extends Controller
 {
-    public function index($id){
+    public function index(Request $request){
 
-        $item = Item::where('id', '=', $id)->first(); // Traigo el item en cuesiton
+        // Traigo el inventario del usuario que acaba de comprar el item
+        $inventario = Inventario::where('idUser', '=', Auth::User()->id)->first();
+        
+        // Transformo el string del inventario en un array
+        $array = explode(',', $inventario->inventario); 
 
-        $inventario = Inventario::where('idUser', '=', Auth::User()->id)->first(); // Traigo el Inventario del usuario
 
-        $array = explode(',', $inventario->inventario); // Transformo el string del inventario en un array
         $band = true;
 
-        for ($i=0; $i < ($inventario->capacidad * 2) ; $i = $i+2) { 
+        for ($i=0; $i < ($inventario->capacidad * 2) + 1 ; $i = $i+2) { 
             
            if($band) {
 
               if($array[$i] == null){
-                $array[$i] = intval($id);
+                $array[$i] = intval($request->item);
                 $array[$i+1] = 1;
                 $band = false;
                 }
@@ -37,6 +40,11 @@ class ComprasController extends Controller
         $inventario->inventario = $array;      
 
         $inventario->save();
+
+        // Le descuento el valor del escudo del oro al usuario
+        $user = User::findOrFail(Auth::User()->id);
+        $user->gold -= $request->oro;
+        $user->save();
 
         return redirect('armeria');
 

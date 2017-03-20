@@ -26,6 +26,7 @@ Route::group(['middleware' => ['isAuth']], function() { // isAuth exige que haya
 
     Route::get('newPlayer', 'UserController@newPlayer');
     Route::post('newPlayer', 'UserController@saveNewPlayer');
+    Route::post('venderItem', 'InventarioController@vender');
 
     Route::group(['middleware' => ['isAdmin']], function() { // isAdmin exige que el usuario sea administrador
             Route::get('crearNota', 'AdminController@crearNota');
@@ -39,13 +40,12 @@ Route::group(['middleware' => ['isAuth']], function() { // isAuth exige que haya
 
         Route::get('/', 'UserController@index');
 
-        Route::get('inventario', 'UserController@inventario');
+        Route::get('inventario', 'InventarioController@index');
         Route::get('personaje', 'UserController@personaje');
         Route::get('trabajo', 'TrabajoController@index');
         Route::get('entrenamiento', 'EntrenamientoController@index');
 
         Route::get('armeria', 'ArmeriaController@index');
-        Route::get('comprar/{id}', 'ComprasController@index'); // Metodo inseguro, te cambian el id del get y compran lo que quieren
 
         Route::get('alquimista', 'AlquimistaController@index');
         Route::get('sastreria', 'SastreriaController@index');
@@ -53,6 +53,10 @@ Route::group(['middleware' => ['isAuth']], function() { // isAuth exige que haya
 
         Route::group(['middleware' => ['controlOro']], function() { // controlOro verifica si el usuario tiene la cantidad de oro necesaria para realizar la accion
             Route::post('entrenamiento', 'EntrenamientoController@entrenar');
+        });
+
+        Route::group(['middleware' => ['controlCompra']], function() { // controlComprao verifica si el usuario tiene la cantidad de oro necesaria para realizar la compra y el espacio suficiente
+            Route::post('armeria', 'ComprasController@index');
         });
 
         

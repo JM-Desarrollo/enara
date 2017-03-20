@@ -152,19 +152,7 @@
 
                 </div>
 
-                <form method="POST" name="formEntrenar" id="formEntrenar">
-                    {{ csrf_field() }}
-                    <input type="hidden" value="" name="oro" id="oro">
-                    <input type="hidden" value="" name="stat" id="stat">
-                </form>
-
-                <script> 
-                    function entrenar($oro, $stat){ 
-                    document.getElementById("oro").value = $oro;
-                    document.getElementById("stat").value = $stat;
-                    document.getElementById("formEntrenar").submit(); 
-                    } 
-                </script>
+            
 
 @endsection
 

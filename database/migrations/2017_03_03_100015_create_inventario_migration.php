@@ -17,7 +17,7 @@ class CreateInventarioMigration extends Migration
             $table->increments('id');
             $table->integer('idUser')->unsigned()->index()->nullable();
             $table->text('inventario')->nullable();
-            $table->integer('capacidad')->default(12);
+            $table->integer('capacidad')->default(24);
             $table->foreign('idUser')->references('id')->on('users')->onDelete('set null');
             $table->timestamps();
         });

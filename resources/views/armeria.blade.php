@@ -10,12 +10,21 @@
                             
                         @endif
 
+                        @if (session('error'))
+                 <div class="alert alert-danger alert-dismissable text-center">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{session('error')}}
+                </div>
+                @endif
+
 <h3>Armeria </h3>
 
 <div class="col-md-12">
     <div class="col-md-6">
         <img src="{{asset('images/armeria/armero.jpg')}}" width="300">
     </div>
+
+    
 
     <div class="col-md-6">
         <span>
@@ -51,10 +60,10 @@
                 <table class="table table-hover">
                     @foreach($escudos as $escudo)
                         <tr>
-                            <td><img src="{{$escudo->img}}"></td>
+                            <td><img src="{{$escudo->img}}" class="{{$escudo->calidad}}"></td>
                             <td  style="vertical-align:middle;"><strong>{{$escudo->name}}</strong></td>
                             <td><strong><img src="{{asset('images/personaje/oro.png')}} "> {{$escudo->precio}}</strong></td>
-                            <td><a href="comprar/{{$escudo->id}} " class="btn btn-warning">Comprar</a></td>
+                            <td><a onclick="comprar({{$escudo->id}}, {{$escudo->precio}})" class="btn btn-warning">Comprar</a></td>
                         </tr>
                     @endforeach
                 </table>
@@ -72,7 +81,19 @@
     </div>
 </div>
                 
+                <form method="POST" name="formArmeria" id="formArmeria">
+                    {{ csrf_field() }}
+                    <input type="hidden" value="" name="oro" id="oro">
+                    <input type="hidden" value="" name="item" id="item">
+                </form>
 
+                <script> 
+                    function comprar($item, $oro){ 
+                    document.getElementById("oro").value = $oro;
+                    document.getElementById("item").value = $item;
+                    document.getElementById("formArmeria").submit(); 
+                    } 
+                </script>
                     
 
 @endsection

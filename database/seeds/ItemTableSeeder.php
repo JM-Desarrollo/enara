@@ -14,6 +14,7 @@ class ItemTableSeeder extends Seeder
         App\Item::create([
             'name' => 'Escudo del Aguila',
             'tipo' => 'escudo',
+            'calidad' => 'comun',
             'img' => 'images/items/escudos/escudo_(1).png',
             'precio' => 500,
             'levelMin' => 1,
@@ -23,6 +24,7 @@ class ItemTableSeeder extends Seeder
        App\Item::create([
             'name' => 'Escudo de Roble',
             'tipo' => 'escudo',
+            'calidad' => 'legendario',
             'img' => 'images/items/escudos/escudo_(2).png',
             'precio' => 500,
             'levelMin' => 1,
@@ -32,6 +34,7 @@ class ItemTableSeeder extends Seeder
        App\Item::create([
             'name' => 'Escudo a Cuadros',
             'tipo' => 'escudo',
+            'calidad' => 'comun',
             'img' => 'images/items/escudos/escudo_(3).png',
             'precio' => 500,
             'levelMin' => 1,
@@ -41,6 +44,7 @@ class ItemTableSeeder extends Seeder
        App\Item::create([
             'name' => 'Escudo de Plata',
             'tipo' => 'escudo',
+            'calidad' => 'mistico',
             'img' => 'images/items/escudos/escudo_(4).png',
             'precio' => 500,
             'levelMin' => 23,
@@ -50,6 +54,7 @@ class ItemTableSeeder extends Seeder
        App\Item::create([
             'name' => 'Escudo del Leon Negro',
             'tipo' => 'escudo',
+            'calidad' => 'legendario',
             'img' => 'images/items/escudos/escudo_(5).png',
             'precio' => 500,
             'levelMin' => 15,
@@ -59,6 +64,7 @@ class ItemTableSeeder extends Seeder
        App\Item::create([
             'name' => 'Escudo de Oro',
             'tipo' => 'escudo',
+            'calidad' => 'raro',
             'img' => 'images/items/escudos/escudo_(6).png',
             'precio' => 500,
             'levelMin' => 5,
@@ -68,6 +74,7 @@ class ItemTableSeeder extends Seeder
        App\Item::create([
             'name' => 'Escudo de Roble Magico',
             'tipo' => 'escudo',
+            'calidad' => 'raro',
             'img' => 'images/items/escudos/escudo_(7).png',
             'precio' => 500,
             'levelMin' => 5,
@@ -77,6 +84,7 @@ class ItemTableSeeder extends Seeder
        App\Item::create([
             'name' => 'Escudo del Leon Orgulloso',
             'tipo' => 'escudo',
+            'calidad' => 'comun',
             'img' => 'images/items/escudos/escudo_(8).png',
             'precio' => 500,
             'levelMin' => 10,

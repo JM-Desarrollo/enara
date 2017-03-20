@@ -146,3 +146,52 @@ footer    {
 .panelInventario {
     background: black !important;
 }
+
+.divItemDetalle{
+
+    background-image: url('../images/registro/bgRaza.png');
+    color: white;
+    opacity: 0.80 ;
+ }
+
+ .divItemDetalle2{
+
+    background-image: url('../images/registro/bgRaza.png');
+    color: white;
+    opacity: 0.80 ;
+    display: none;
+ }
+ 
+
+ .itemImagen{
+     border-style: groove;
+     border-width: 5px;  
+ }
+
+ .comun{
+     background-image: url('../images/items/calidad/comun.png');
+ }
+
+  .raro{
+     background-image: url('../images/items/calidad/raro.png');
+ }
+
+  .epico{
+     background-image: url('../images/items/calidad/epico.png');
+ }
+
+ .legendario{
+     background-image: url('../images/items/calidad/legendario.png');
+ }
+
+ .mistico{
+     background-image: url('../images/items/calidad/mistico.png');
+ }
+
+ .seleccionado{
+     background-image: url('../images/items/calidad/seleccionado.png');
+ }
+
+ .vacio{
+     background-image: url('../images/items/calidad/vacio.png');
+ }
