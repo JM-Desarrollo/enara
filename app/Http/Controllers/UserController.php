@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Tutorial;
 use App\UserJob;
 use App\Stats;
+use App\Equipado;
 use App\User;
 use App\Inventario;
 
@@ -86,6 +87,10 @@ class UserController extends Controller
         $userJob = new UserJob();  
         $userJob->idUser = Auth::user()->id;
         $userJob->save(); 
+
+        $equipo = new Equipado();
+        $equipo->idUser = Auth::user()->id;
+        $equipo->save();
 
 
         return redirect('tutorial');

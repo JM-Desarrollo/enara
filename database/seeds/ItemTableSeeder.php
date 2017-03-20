@@ -11,6 +11,7 @@ class ItemTableSeeder extends Seeder
      */
     public function run()
     {
+        
         App\Item::create([
             'name' => 'Escudo del Aguila',
             'tipo' => 'escudo',

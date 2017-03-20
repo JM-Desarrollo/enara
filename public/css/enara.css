@@ -195,3 +195,15 @@ footer    {
  .vacio{
      background-image: url('../images/items/calidad/vacio.png');
  }
+
+  .equipo-manoPrincipal{
+     background-image: url('../images/personaje/equipo/manoPrincipal.png');
+     height: 70px;
+     width: 68px;
+ }
+
+ .equipo-manoSecundaria{
+     background-image: url('../images/personaje/equipo/manoSecundaria.png');
+     height: 70px;
+     width: 68px;
+ }

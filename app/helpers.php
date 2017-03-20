@@ -4,6 +4,7 @@ use App\Raza;
 use App\Item;
 use App\Clase;
 use App\Stats;
+use App\Equipado;
 
 function traerRazas()
 {
@@ -198,4 +199,18 @@ function habilidadItem($hab){
     return $mensaje;
 }
 
+function getEquip(){
+    return $equip = Equipado::where('idUser', '=', Auth::User()->id)->first();
+}
 
+function getImgEquip($item){
+    $item = Item::findOrFail($item);
+    $img = $item->img;
+    return $img;
+}
+
+function getCalEquip($item){
+    $item = Item::findOrFail($item);
+    $img = $item->calidad;
+    return $img;
+}
