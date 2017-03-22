@@ -27,6 +27,7 @@ Route::group(['middleware' => ['isAuth']], function() { // isAuth exige que haya
     Route::get('newPlayer', 'UserController@newPlayer');
     Route::post('newPlayer', 'UserController@saveNewPlayer');
     Route::post('venderItem', 'InventarioController@vender');
+    Route::post('equiparItem', 'InventarioController@equipar');
 
     Route::group(['middleware' => ['isAdmin']], function() { // isAdmin exige que el usuario sea administrador
             Route::get('crearNota', 'AdminController@crearNota');

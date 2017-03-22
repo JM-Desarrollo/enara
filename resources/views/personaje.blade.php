@@ -3,15 +3,15 @@
 <h2 class="text-center">Vista General del Personaje</h2><br />
 
 
-<div class="row">
+<div class="row text-center">
     <div class="col-md-5">
-        <div class="col-md-12 text-center"><b>Armas</b></div>
-        <div class="col-md-12 text-center">
+        <div class="col-md-12"><b>Armas</b></div>
+        <div class="col-md-12">
             <div class="col-md-6">
                 @if(!(is_null($equipado->manoPrincipal)))
                     {{ getImgEquip($equipado->manoPrincipal)}}
                 @else   
-                    <img src="{{asset('images/personaje/equipo/manoPrincipal.png')}} ">
+                    <img src="{{asset('images/personaje/equipo/manoPrincipal.png')}}" alt="Arma Principal">
                 @endif
             </div>
 
@@ -19,35 +19,51 @@
                 @if(!(is_null($equipado->manoSecundaria)))
                     <img src="{{getImgEquip($equipado->manoSecundaria)}} " class="{{getCalEquip($equipado->manoSecundaria)}}">
                 @else   
-                    <img src="{{asset('images/personaje/equipo/manoSecundaria.png')}} ">
+                    <img src="{{asset('images/personaje/equipo/manoSecundaria.png')}}" alt="Arma Secundaria">
                 @endif
             </div>
         </div>
 
-        <div class="col-md-12 text-center"><br /><br /><b>Anillos y Amuletos</b></div>
-        <div class="col-md-12 text-center">
-            <div class="col-md-6">
+        <div class="col-md-12"><br /><br /><b>Anillos y Amuletos</b></div>
+        <div class="col-md-12">
+            <div class="col-md-3">
                 @if(!(is_null($equipado->manoPrincipal)))
                     {{ getImgEquip($equipado->manoPrincipal)}}
                 @else   
-                    <img src="{{asset('images/personaje/equipo/manoPrincipal.png')}} ">
+                    <img src="{{asset('images/personaje/equipo/anillo.png')}} ">
                 @endif
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-3">
+                @if(!(is_null($equipado->manoPrincipal)))
+                    {{ getImgEquip($equipado->manoPrincipal)}}
+                @else   
+                    <img src="{{asset('images/personaje/equipo/anillo.png')}}" alt="Armadura / Tunica">
+                @endif
+            </div>
+
+            <div class="col-md-3">
+                @if(!(is_null($equipado->manoPrincipal)))
+                    {{ getImgEquip($equipado->manoPrincipal)}}
+                @else   
+                    <img src="{{asset('images/personaje/equipo/amuleto.png')}}" alt="Armadura / Tunica">
+                @endif
+            </div>
+
+            <div class="col-md-3">
                 @if(!(is_null($equipado->manoSecundaria)))
                     <img src="{{getImgEquip($equipado->manoSecundaria)}} " class="{{getCalEquip($equipado->manoSecundaria)}}">
                 @else   
-                    <img src="{{asset('images/personaje/equipo/manoSecundaria.png')}} ">
+                    <img src="{{asset('images/personaje/equipo/amuleto.png')}} ">
                 @endif
             </div>
         </div>
         
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-2">
          @if(Auth::User()->idRaza == 1)
-            <img src="{{asset('images/registro/humanoON.jpg')}}" width="180px">
+            <br /><br /><img src="{{asset('images/registro/humanoON.jpg')}}" width="100px">
         @else
             @if(Auth::User()->idRaza == 2)
             <img src="{{asset('images/registro/elfoON.jpg')}} ">
@@ -63,41 +79,66 @@
         @endif
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-5">
         <div class="col-md-12 text-center"><b>Equipamentos</b></div>
         <div class="col-md-12 text-center">
-            <div class="col-md-6">
+            <div class="col-md-3">
                 @if(!(is_null($equipado->manoPrincipal)))
                     {{ getImgEquip($equipado->manoPrincipal)}}
                 @else   
-                    <img src="{{asset('images/personaje/equipo/manoPrincipal.png')}} ">
+                    <img src="{{asset('images/personaje/equipo/casco.png')}}" alt="Armadura / Tunica">
                 @endif
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-3">
+                @if(!(is_null($equipado->manoPrincipal)))
+                    {{ getImgEquip($equipado->manoPrincipal)}}
+                @else   
+                    <img src="{{asset('images/personaje/equipo/armadura.png')}}" alt="Armadura / Tunica">
+                @endif
+            </div>
+
+            <div class="col-md-3">
+                @if(!(is_null($equipado->manoPrincipal)))
+                    {{ getImgEquip($equipado->manoPrincipal)}}
+                @else   
+                    <img src="{{asset('images/personaje/equipo/guantes.png')}}" alt="Armadura / Tunica">
+                @endif
+            </div>
+
+            <div class="col-md-3">
                 @if(!(is_null($equipado->manoSecundaria)))
                     <img src="{{getImgEquip($equipado->manoSecundaria)}} " class="{{getCalEquip($equipado->manoSecundaria)}}">
                 @else   
-                    <img src="{{asset('images/personaje/equipo/manoSecundaria.png')}} ">
+                    <img src="{{asset('images/personaje/equipo/botas.png')}}" alt="Casco / Sombrero">
+                    
                 @endif
             </div>
         </div>
 
         <div class="col-md-12 text-center"><b><br /><br />Otros</b></div>
         <div class="col-md-12 text-center">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 @if(!(is_null($equipado->manoPrincipal)))
                     {{ getImgEquip($equipado->manoPrincipal)}}
                 @else   
-                    <img src="{{asset('images/personaje/equipo/manoPrincipal.png')}} ">
+                    <img src="{{asset('images/personaje/equipo/capa.png')}} ">
                 @endif
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-4">
+                @if(!(is_null($equipado->manoPrincipal)))
+                    {{ getImgEquip($equipado->manoPrincipal)}}
+                @else   
+                    <img src="{{asset('images/personaje/equipo/cinturon.png')}}" alt="Armadura / Tunica">
+                @endif
+            </div>
+
+            <div class="col-md-4">
                 @if(!(is_null($equipado->manoSecundaria)))
                     <img src="{{getImgEquip($equipado->manoSecundaria)}} " class="{{getCalEquip($equipado->manoSecundaria)}}">
                 @else   
-                    <img src="{{asset('images/personaje/equipo/manoSecundaria.png')}} ">
+                    <img src="{{asset('images/personaje/equipo/collar.png')}} ">
                 @endif
             </div>
         </div>
